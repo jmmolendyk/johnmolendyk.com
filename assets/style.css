@@ -149,3 +149,10 @@ textarea { min-height: 150px; resize: vertical; }
 .client-logo { height: 30px; width: auto; max-width: 180px; opacity: .8; filter: grayscale(1); }
 .client-logo.logo-wells-fargo { height: 44px; }
 @media (max-width: 620px) { .client-logo { height: 24px; max-width: 140px; } .client-logo.logo-wells-fargo { height: 36px; } }
+
+/* Icon tiles: gradient + inner highlight + soft shadow for a dimensional, not cartoonish, look */
+.icon { width: 52px; height: 52px; border-radius: 14px; display: grid; place-items: center; margin-bottom: 16px;
+  background: linear-gradient(145deg, #3d66e8 0%, #1f46c9 55%, #17359a 100%);
+  box-shadow: 0 8px 16px -6px rgba(31,70,201,.55), inset 0 1px 0 rgba(255,255,255,.38), inset 0 -2px 0 rgba(0,0,0,.14); }
+.icon svg { display: block; }
+.card .icon + .tag { display: block; margin-bottom: 4px; }

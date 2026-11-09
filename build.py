@@ -14,6 +14,71 @@ FORM_KEY = "YOUR_WEB3FORMS_ACCESS_KEY"
 NAV = [("/work/", "Work"), ("/approach/", "Approach"), ("/about/", "About"), ("/contact/", "Contact")]
 
 
+
+# ---------------------------------------------------------------- icons
+# Layered glyphs on a gradient tile: each shape gets a soft offset shadow for depth.
+import math
+
+W, A = "#ffffff", "#f2a516"
+
+
+def _shape(sh, shadow=False):
+    kind, geo, col = sh[0], sh[1], sh[2]
+    op = sh[3] if len(sh) > 3 else 1
+    sw = sh[4] if len(sh) > 4 else 2.4
+    c = "#0a1d66" if shadow else col
+    o = op * (0.32 if shadow else 1)
+    tr = ' transform="translate(0 1.6)"' if shadow else ""
+    if kind == "path-f":
+        return '<path d="%s" fill="%s" fill-opacity="%s"%s/>' % (geo, c, o, tr)
+    if kind == "path-s":
+        return '<path d="%s" fill="none" stroke="%s" stroke-opacity="%s" stroke-width="%s" stroke-linecap="round" stroke-linejoin="round"%s/>' % (geo, c, o, sw, tr)
+    if kind == "rect":
+        x, y, w, h = geo
+        return '<rect x="%s" y="%s" width="%s" height="%s" rx="1.8" fill="%s" fill-opacity="%s"%s/>' % (x, y, w, h, c, o, tr)
+    if kind == "circle-f":
+        cx, cy, r = geo
+        return '<circle cx="%s" cy="%s" r="%s" fill="%s" fill-opacity="%s"%s/>' % (cx, cy, r, c, o, tr)
+    if kind == "circle-s":
+        cx, cy, r = geo
+        return '<circle cx="%s" cy="%s" r="%s" fill="none" stroke="%s" stroke-opacity="%s" stroke-width="%s"%s/>' % (cx, cy, r, c, o, sw, tr)
+
+
+def _teeth():
+    out = []
+    for k in range(8):
+        a = math.radians(k * 45)
+        x1, y1 = 16 + 9 * math.cos(a), 16 + 9 * math.sin(a)
+        x2, y2 = 16 + 12.2 * math.cos(a), 16 + 12.2 * math.sin(a)
+        out.append(("path-s", "M%.2f %.2f L%.2f %.2f" % (x1, y1, x2, y2), W, 1, 3.6))
+    return out
+
+
+GLYPHS = {
+    "shield": [("path-f", "M16 3.5 L26 7.5 V15.5 C26 21.5 21.8 26 16 28.5 C10.2 26 6 21.5 6 15.5 V7.5 Z", W),
+               ("path-s", "M11.3 16 L14.8 19.6 L21 12", A, 1, 2.9)],
+    "flow": [("path-s", "M16 11 V15.5 M9 20.5 V15.5 H23 V20.5", W, .85, 2),
+             ("rect", (11, 4.5, 10, 6.5), W), ("rect", (4, 20.5, 10, 7), W), ("rect", (18, 20.5, 10, 7), A)],
+    "roadmap": [("rect", (4, 19, 6, 8), W), ("rect", (13, 14, 6, 13), W), ("rect", (22, 10, 6, 17), W),
+                ("path-s", "M25 10 V3.8", W, 1, 1.7), ("path-f", "M25 3.6 L30.2 5.7 L25 7.8 Z", A)],
+    "cog": [("circle-s", (16, 16, 6.6), W, 1, 3.4)] + _teeth() + [("circle-f", (16, 16, 2.5), A)],
+    "layers": [("path-s", "M4 21 L16 27 L28 21", W, .75, 2.4), ("path-s", "M4 16 L16 22 L28 16", W, .9, 2.4),
+               ("path-f", "M16 4.5 L28 10.5 L16 16.5 L4 10.5 Z", A)],
+    "board": [("rect", (4, 5, 7, 7), W), ("rect", (4, 14.5, 7, 7), W), ("rect", (13, 5, 7, 11), W),
+              ("rect", (13, 18.5, 7, 4.5), W, .7), ("rect", (22, 5, 7, 7), W, .7), ("rect", (22, 14.5, 7, 12), A)],
+    "pen": [("path-s", "M8 7.5 L6 25 M24 7.5 L26 25", W, .6, 1.3),
+            ("path-s", "M6 25 C7 9 25 9 26 25", W, 1, 2.8),
+            ("rect", (3.9, 23, 4.2, 4.2), W), ("rect", (23.9, 23, 4.2, 4.2), W),
+            ("circle-f", (8, 7.5, 2.4), A), ("circle-f", (24, 7.5, 2.4), A)],
+}
+
+
+def icon(name):
+    shapes = GLYPHS[name]
+    body = "".join(_shape(s, True) for s in shapes) + "".join(_shape(s) for s in shapes)
+    return '<span class="icon" aria-hidden="true"><svg viewBox="0 0 32 32" width="35" height="35">%s</svg></span>' % body
+
+
 def page(path, title, desc, body, current=""):
     nav = "".join(
         '<a href="%s"%s>%s</a>' % (h, ' aria-current="page"' if h == current else "", t) for h, t in NAV
@@ -258,9 +323,9 @@ home = f"""<section class="hero"><div class="wrap">
 <p class="eyebrow">What I do</p>
 <h2>Governance that fits how the organization actually works</h2>
 <div class="grid three" style="margin-top:28px">
-<div class="card accent"><h3>AI governance</h3><p>Find the AI in use, assess risk and maturity, set up the operating model and controls, and prepare for regulation, then transition ownership to your team.</p></div>
-<div class="card accent"><h3>Process and controls</h3><p>Fix the process first. Six Sigma discipline applied to audit findings, compliance workflows and decision rules so controls are lighter and actually followed.</p></div>
-<div class="card accent"><h3>Project and product delivery</h3><p>From discovery to controlled deployment: roadmaps, vendors, migrations and adoption, delivered with Scrum and product practice.</p></div>
+<div class="card accent">{icon("shield")}<h3>AI governance</h3><p>Find the AI in use, assess risk and maturity, set up the operating model and controls, and prepare for regulation, then transition ownership to your team.</p></div>
+<div class="card accent">{icon("flow")}<h3>Process and controls</h3><p>Fix the process first. Six Sigma discipline applied to audit findings, compliance workflows and decision rules so controls are lighter and actually followed.</p></div>
+<div class="card accent">{icon("roadmap")}<h3>Project and product delivery</h3><p>From discovery to controlled deployment: roadmaps, vendors, migrations and adoption, delivered with Scrum and product practice.</p></div>
 </div>
 <p style="margin-top:28px">Organization-level engagements, including fractional AI governance, run through <a href="{FLOWHAUS}">Flowhaus.ai</a>.</p>
 </div></section>
@@ -277,10 +342,10 @@ home = f"""<section class="hero"><div class="wrap">
 <h2>Four disciplines, one practitioner</h2>
 <p class="lede">Most governance gaps sit between disciplines. Having all four in one person means fewer handoffs and controls that survive contact with the business.</p>
 <div class="grid four" style="margin-top:28px">
-<div class="card"><span class="tag">Process engineering</span><h3>Six Sigma Black Belt</h3><p>Remove waste and rework before adding controls or automation.</p></div>
-<div class="card"><span class="tag">AI governance</span><h3>AIGP &middot; ISO 42001 &middot; CIPM</h3><p>Frameworks, risk, privacy and operating models.</p></div>
-<div class="card"><span class="tag">Product delivery</span><h3>CSM &middot; CSPO</h3><p>Roadmaps, vendors and delivery to sustainable operations.</p></div>
-<div class="card design"><span class="tag">Human-centered design</span><h3>M.S., HCI + Design</h3><p>Makes governance usable, so people follow it instead of working around it.</p></div>
+<div class="card">{icon("cog")}<span class="tag">Process engineering</span><h3>Six Sigma Black Belt</h3><p>Remove waste and rework before adding controls or automation.</p></div>
+<div class="card">{icon("layers")}<span class="tag">AI governance</span><h3>AIGP &middot; ISO 42001 &middot; CIPM</h3><p>Frameworks, risk, privacy and operating models.</p></div>
+<div class="card">{icon("board")}<span class="tag">Product delivery</span><h3>CSM &middot; CSPO</h3><p>Roadmaps, vendors and delivery to sustainable operations.</p></div>
+<div class="card design">{icon("pen")}<span class="tag">Human-centered design</span><h3>M.S., HCI + Design</h3><p>Makes governance usable, so people follow it instead of working around it.</p></div>
 </div>
 </div></section>
 
@@ -324,8 +389,8 @@ approach = f"""<section class="hero" style="padding-bottom:24px"><div class="wra
 </div></section>
 <section class="band"><div class="wrap">
 <div class="grid two">
-<div class="card accent"><h3>Governance as enabler</h3><p>Good governance is how teams get to say yes to AI with confidence. Lightweight, proportionate controls let adoption move faster, because people know where the lines are.</p></div>
-<div class="card design"><h3>Design as a capability</h3><p>A human-centered design background shows up in the details: disclosures users understand, workflows people follow, and controls that fit how work is done.</p></div>
+<div class="card accent">{icon("shield")}<h3>Governance as enabler</h3><p>Good governance is how teams get to say yes to AI with confidence. Lightweight, proportionate controls let adoption move faster, because people know where the lines are.</p></div>
+<div class="card design">{icon("pen")}<h3>Design as a capability</h3><p>A human-centered design background shows up in the details: disclosures users understand, workflows people follow, and controls that fit how work is done.</p></div>
 </div>
 <p style="margin-top:28px">For fractional AI governance and focused engagements, see <a href="{FLOWHAUS}">Flowhaus.ai</a>.</p>
 <div class="actions"><a class="btn" href="{CALENDLY}">Book a discovery call</a></div>
