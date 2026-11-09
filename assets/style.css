@@ -142,3 +142,10 @@ textarea { min-height: 150px; resize: vertical; }
   .steps li { grid-template-columns: 1fr; }
 }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
+
+/* Client logos (grayscale, small; past employers/clients, not endorsements) */
+.case-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
+.case-top .eyebrow { margin-bottom: 14px; }
+.client-logo { height: 30px; width: auto; max-width: 180px; opacity: .8; filter: grayscale(1); }
+.client-logo.logo-wells-fargo { height: 44px; }
+@media (max-width: 620px) { .client-logo { height: 24px; max-width: 140px; } .client-logo.logo-wells-fargo { height: 36px; } }

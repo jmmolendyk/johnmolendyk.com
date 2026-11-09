@@ -68,6 +68,7 @@ def write(path, content):
 CASES = [
     {
         "slug": "mortgage-document-governance",
+        "logo": ("union-bank", "Union Bank"),
         "short": "Mortgage document governance",
         "title": "Bringing controls to mortgage document inventory",
         "client": "Union Bank, mortgage banking",
@@ -100,6 +101,7 @@ CASES = [
     },
     {
         "slug": "wealth-migration-continuity",
+        "logo": ("wells-fargo", "Wells Fargo"),
         "short": "Migration weekends with zero losses",
         "title": "Keeping wealth-management accounts transacting through three migration weekends",
         "client": "Wells Fargo / Wachovia, wealth management",
@@ -131,6 +133,7 @@ CASES = [
     },
     {
         "slug": "healthcare-feedback-platform",
+        "logo": ("alliance-healthcare", "Alliance Healthcare Services"),
         "short": "Healthcare feedback and request platform",
         "title": "Replacing paper surveys with a scalable feedback and case-management platform",
         "client": "Alliance Healthcare Services",
@@ -163,6 +166,7 @@ CASES = [
     },
     {
         "slug": "ai-voice-privacy-research",
+        "logo": ("meta", "Meta"),
         "short": "AI voice, privacy and disclosure",
         "title": "Research behind AI voice features: privacy, disclosure and adoption",
         "client": "Meta / Reality Labs",
@@ -217,8 +221,10 @@ for c in CASES:
     secs = "".join("<h2>%s</h2>%s" % s for s in c["sections"])
     nav_prev = '<a href="/work/%s/">&larr; %s</a>' % (c["prev"]["slug"], c["prev"]["short"]) if c["prev"] else '<a href="/work/">&larr; All work</a>'
     nav_next = '<a href="/work/%s/">%s &rarr;</a>' % (c["next"]["slug"], c["next"]["short"]) if c["next"] else '<a href="/work/">All work &rarr;</a>'
+    lg, lg_alt = c["logo"]
+    logo = '<img class="client-logo logo-%s" src="/assets/logos/%s.png" alt="%s logo">' % (lg, lg, lg_alt)
     body = f"""<section class="case-head"><div class="wrap">
-<p class="eyebrow">Case study</p>
+<div class="case-top"><p class="eyebrow">Case study</p>{logo}</div>
 <h1>{c['title']}</h1>
 <p class="lede">{c['summary']}</p>
 {tags_html(c['tags'])}
