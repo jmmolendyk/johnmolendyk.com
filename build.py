@@ -339,7 +339,22 @@ home = f"""<section class="hero"><div class="wrap">
 <li class="mstep"><span class="mnum">03</span><div class="mart"><img src="/assets/step-delivery.png" alt="" width="298" height="128"></div><h3>Product Delivery</h3><p class="mkick">Execute reliably</p><p>Take it from discovery to controlled deployment: roadmaps, vendors, migrations and adoption.</p><span class="mchip">CSM &middot; CSPO</span></li>
 </ol>
 <div class="mloop" aria-hidden="true"><span class="up"></span><span class="label">Continuous learning</span><span class="down"></span></div>
-<div class="mbase">{icon("shield", "sm")}<div><h3>AI Governance <span>The foundation</span></h3><p>Establish the principles, accountability and guardrails for safe, ethical, responsible AI, owned by your team.</p><div class="mchips"><span class="mchip">AIGP</span><span class="mchip">ISO 42001 Lead Implementer</span><span class="mchip">CIPM</span></div></div></div>
+<div class="mbase"><div class="mpanel" aria-hidden="true"><svg viewBox="0 0 340 150" role="presentation">
+<defs>
+<linearGradient id="gv" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f7f9fd"/><stop offset="1" stop-color="#c7d4e7"/></linearGradient>
+<linearGradient id="ga" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffd988"/><stop offset="1" stop-color="#f0a014"/></linearGradient>
+<filter id="gb" x="-20%" y="-100%" width="140%" height="300%"><feGaussianBlur stdDeviation="5"/></filter>
+</defs>
+<ellipse cx="170" cy="138" rx="150" ry="8" fill="#17355f" opacity=".22" filter="url(#gb)"/>
+<g stroke="#17355f" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round">
+<rect x="20" y="100" width="80" height="28" rx="6" fill="url(#gv)"/><rect x="106" y="100" width="80" height="28" rx="6" fill="url(#gv)"/><rect x="192" y="100" width="80" height="28" rx="6" fill="url(#gv)"/>
+<rect x="63" y="70" width="80" height="28" rx="6" fill="url(#gv)"/><rect x="149" y="70" width="80" height="28" rx="6" fill="url(#gv)"/>
+<rect x="106" y="40" width="80" height="28" rx="6" fill="url(#ga)"/>
+<path d="M304 66 L329 76 V98 C329 114 318 123 304 129 C290 123 279 114 279 98 V76 Z" fill="url(#gv)"/>
+<path d="M293 97 L301 105 L317 86" fill="none" stroke="#f2a516" stroke-width="5.5"/>
+</g>
+<g stroke="#ffffff" stroke-width="2" stroke-linecap="round" opacity=".85"><path d="M28 105 H92 M114 105 H178 M200 105 H264 M71 75 H135 M157 75 H221 M114 45 H178" /></g>
+</svg></div><div><h3>AI Governance <span>The foundation</span></h3><p>Establish the principles, accountability and guardrails for safe, ethical, responsible AI, owned by your team.</p><div class="mchips"><span class="mchip">AIGP</span><span class="mchip">ISO 42001 Lead Implementer</span><span class="mchip">CIPM</span></div></div></div>
 </figure>
 <p style="margin-top:28px">Organization-level engagements, including fractional AI governance, run through <a href="{FLOWHAUS}">Flowhaus.ai</a>.</p>
 </div></section>

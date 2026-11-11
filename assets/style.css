@@ -180,7 +180,7 @@ textarea { min-height: 150px; resize: vertical; }
 .mloop .up::before { content: ""; position: absolute; top: 0; left: -5px; border: 6px solid transparent; border-bottom: 9px solid currentColor; border-top: 0; }
 .mloop .down::after { content: ""; position: absolute; bottom: 0; left: -5px; border: 6px solid transparent; border-top: 9px solid currentColor; border-bottom: 0; }
 .mloop .label { grid-column: 2 / 5; justify-self: center; font-style: italic; font-weight: 600; color: var(--blue-dark); background: var(--soft); padding: 0 12px; position: relative; z-index: 1; }
-.mbase { display: flex; gap: 18px; align-items: center; color: #fff; background: linear-gradient(135deg, #1f46c9 0%, #12307f 100%); border-radius: var(--radius); padding: 22px 26px; box-shadow: 0 12px 24px -14px rgba(18,48,127,.7); }
+.mbase { display: grid; grid-template-columns: 300px 1fr; gap: 30px; align-items: center; color: #fff; background: linear-gradient(135deg, #1f46c9 0%, #12307f 100%); border-radius: var(--radius); padding: 22px 28px 22px 22px; box-shadow: 0 12px 24px -14px rgba(18,48,127,.7); }
 .mbase h3 { font-size: 22px; margin: 0 0 4px; }
 .mbase h3 span { font-family: var(--mono); font-size: 12px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; opacity: .8; margin-left: 10px; }
 .mbase p { margin: 0; color: rgba(255,255,255,.9); }
@@ -201,3 +201,8 @@ textarea { min-height: 150px; resize: vertical; }
 .mstep.center .mchip { background: #fff4de; color: #7a5200; }
 .mchips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
 .mbase .mchip { margin-top: 0; background: rgba(255,255,255,.16); color: #fff; box-shadow: inset 0 0 0 1px rgba(255,255,255,.28); }
+
+.mpanel { background: #fff; border-radius: 12px; padding: 12px 10px 4px; box-shadow: inset 0 0 0 1px rgba(255,255,255,.6), 0 8px 18px -10px rgba(0,0,0,.45); }
+.mpanel svg { display: block; width: 100%; height: auto; }
+.mbase h3 { font-size: 26px; }
+@media (max-width: 860px) { .mbase { grid-template-columns: 1fr; gap: 18px; padding: 20px; } .mpanel { max-width: 340px; } .mbase h3 { font-size: 22px; } }
