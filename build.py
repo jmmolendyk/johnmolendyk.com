@@ -12,7 +12,7 @@ LINKEDIN = "https://www.linkedin.com/in/johnmolendyk"
 FORM_KEY = "YOUR_WEB3FORMS_ACCESS_KEY"
 
 # Set True when the Lab entries have real content: adds Lab to the nav, footer and sitemap and lets search engines index it.
-SHOW_LAB = False
+SHOW_LAB = True
 
 NAV = [("/work/", "Work")] + ([("/lab/", "Lab")] if SHOW_LAB else []) + [("/approach/", "Approach"), ("/about/", "About"), ("/contact/", "Contact")]
 
