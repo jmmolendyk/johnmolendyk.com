@@ -11,7 +11,10 @@ FLOWHAUS = "https://flowhaus.ai"
 LINKEDIN = "https://www.linkedin.com/in/johnmolendyk"
 FORM_KEY = "YOUR_WEB3FORMS_ACCESS_KEY"
 
-NAV = [("/work/", "Work"), ("/approach/", "Approach"), ("/about/", "About"), ("/contact/", "Contact")]
+# Set True when the Lab entries have real content: adds Lab to the nav, footer and sitemap and lets search engines index it.
+SHOW_LAB = False
+
+NAV = [("/work/", "Work")] + ([("/lab/", "Lab")] if SHOW_LAB else []) + [("/approach/", "Approach"), ("/about/", "About"), ("/contact/", "Contact")]
 
 
 
@@ -83,6 +86,8 @@ def page(path, title, desc, body, current=""):
     nav = "".join(
         '<a href="%s"%s>%s</a>' % (h, ' aria-current="page"' if h == current else "", t) for h, t in NAV
     )
+    lab_link = '<a href="/lab/">Lab</a>' if SHOW_LAB else ""
+    noindex = '<meta name="robots" content="noindex">\n' if path.startswith("/lab/") and not SHOW_LAB else ""
     html = f"""<!doctype html>
 <html lang="en">
 <head>
@@ -91,7 +96,7 @@ def page(path, title, desc, body, current=""):
 <title>{title}</title>
 <meta name="description" content="{desc}">
 <meta name="theme-color" content="#ffffff">
-<link rel="canonical" href="{SITE}{path}">
+{noindex}<link rel="canonical" href="{SITE}{path}">
 <meta property="og:type" content="website">
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{desc}">
@@ -112,7 +117,7 @@ def page(path, title, desc, body, current=""):
 </main>
 <footer class="site-footer"><div class="wrap">
 <div>&copy; 2026 John Molendyk</div>
-<div class="foot-links"><a href="/work/">Work</a><a href="/approach/">Approach</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="{LINKEDIN}">LinkedIn</a><a href="{FLOWHAUS}">Flowhaus.ai</a></div>
+<div class="foot-links"><a href="/work/">Work</a>{lab_link}<a href="/approach/">Approach</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="{LINKEDIN}">LinkedIn</a><a href="{FLOWHAUS}">Flowhaus.ai</a></div>
 </div></footer>
 </body>
 </html>
@@ -456,6 +461,74 @@ contact = f"""<section class="hero" style="padding-bottom:24px"><div class="wrap
 </div></section>"""
 page("/contact/", "Contact | John Molendyk", "Book a discovery call or send a message.", contact, "/contact/")
 
+
+# ---------------------------------------------------------------- lab
+LAB = [
+    {
+        "slug": "insights",
+        "name": "Insights",
+        "tags": ["Personal build", "AI governance", "Articles"],
+        "summary": "[Placeholder] One or two sentences on what Insights is and who it is for.",
+        "what": "[Placeholder] Describe the app: a collection of AI governance articles presented under the Insights name. What can a visitor do with it?",
+        "why": "[Placeholder] Why you built it and the gap it fills.",
+        "how": "[Placeholder] How it was built: tools, the role AI played, what you decided versus what the AI drafted.",
+        "links": "[Placeholder] Live demo and source links, or “Coming soon.”",
+    },
+    {
+        "slug": "ai-register",
+        "name": "AI Register",
+        "tags": ["Personal build", "AI governance", "Workspace"],
+        "summary": "[Placeholder] One or two sentences on what AI Register is and who it is for.",
+        "what": "[Placeholder] Describe the AI governance workspace: what it tracks and what a user can do in it.",
+        "why": "[Placeholder] Why you built it, and how it connects to the governance work you do for organizations.",
+        "how": "[Placeholder] How it was built: tools, the role AI played, what you decided versus what the AI drafted, and how it handles data.",
+        "links": "[Placeholder] Live demo and source links, or “Coming soon.”",
+    },
+]
+
+
+def lab_tags(tags):
+    return '<div class="tags">' + "".join("<span>%s</span>" % t for t in tags) + "</div>"
+
+
+lab_cards = "".join(
+    f"""<a class="card work-card" href="/lab/{e['slug']}/">
+{lab_tags(e['tags'])}
+<h3>{e['name']}</h3>
+<p class="muted">{e['summary']}</p>
+<span class="more">Open &rarr;</span>
+</a>"""
+    for e in LAB
+)
+page("/lab/", "Lab | John Molendyk", "Apps built with AI and working artifacts from AI governance.",
+     f"""<section class="hero" style="padding-bottom:24px"><div class="wrap">
+<p class="eyebrow">Lab</p>
+<h1>Things I build and make</h1>
+<p class="lede">Apps built with AI and working artifacts from AI governance. These are personal projects, separate from client work and from my articles.</p>
+</div></section>
+<section style="padding-top:24px"><div class="wrap"><div class="grid two">{lab_cards}</div>
+<p class="note" style="margin-top:28px">For organization-level engagements and resources, see <a href="{FLOWHAUS}">Flowhaus.ai</a>.</p></div></section>""",
+     "/lab/")
+
+for e in LAB:
+    shots = "".join('<div class="shot-placeholder">Screenshot placeholder %d</div>' % i for i in (1, 2))
+    page("/lab/%s/" % e["slug"], "%s | Lab | John Molendyk" % e["name"], e["summary"],
+         f"""<section class="case-head"><div class="wrap">
+<p class="eyebrow">Lab</p>
+<h1>{e['name']}</h1>
+<p class="lede">{e['summary']}</p>
+{lab_tags(e['tags'])}
+</div></section>
+<section style="padding-top:24px"><div class="wrap"><div class="prose">
+<h2>What it is</h2><p>{e['what']}</p>
+<h2>Why I built it</h2><p>{e['why']}</p>
+<div class="grid two" style="margin:28px 0">{shots}</div>
+<h2>How it was built</h2><p>{e['how']}</p>
+<h2>Links</h2><p>{e['links']}</p>
+<div class="case-nav"><a href="/lab/">&larr; Lab</a><a href="/contact/">Questions? Get in touch &rarr;</a></div>
+</div></div></section>""",
+         "/lab/")
+
 # ---------------------------------------------------------------- 404 and redirects of old Webflow URLs
 page("/404.html", "Page not found | John Molendyk", "Page not found.",
      '<section class="hero"><div class="wrap"><h1>Page not found</h1><p class="lede">That page has moved or does not exist.</p><div class="actions"><a class="btn" href="/">Home</a><a class="btn ghost" href="/work/">Work</a></div></div></section>')
@@ -475,6 +548,8 @@ for old, new in REDIRECTS.items():
 
 # ---------------------------------------------------------------- site files
 urls = ["/", "/work/", "/approach/", "/about/", "/contact/"] + ["/work/%s/" % c["slug"] for c in CASES]
+if SHOW_LAB:
+    urls += ["/lab/"] + ["/lab/%s/" % e["slug"] for e in LAB]
 write("/sitemap.xml", '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
       + "".join("<url><loc>%s%s</loc></url>\n" % (SITE, u) for u in urls) + "</urlset>\n")
 write("/robots.txt", "User-agent: *\nAllow: /\nSitemap: %s/sitemap.xml\n" % SITE)

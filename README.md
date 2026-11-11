@@ -12,3 +12,8 @@ Static site for GitHub Pages. Content lives in `build.py`; styles in `assets/sty
 - Verify the case-study figures flagged in the hand-off notes.
 - DNS: point the apex and `www` records at GitHub Pages. Do not touch MX records or email stops.
 - Cancel the Webflow hosting plan only after the new site is live.
+
+## Lab section
+`/lab/` (Insights, AI Register) is built but hidden: not in the nav, footer or sitemap, and marked noindex.
+When the text is real, set `SHOW_LAB = True` in `build.py`, rebuild and push.
+Screenshots go in `assets/lab/`. Redact names, emails, keys and internal URLs first.

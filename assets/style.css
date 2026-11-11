@@ -156,3 +156,5 @@ textarea { min-height: 150px; resize: vertical; }
   box-shadow: 0 8px 16px -6px rgba(31,70,201,.55), inset 0 1px 0 rgba(255,255,255,.38), inset 0 -2px 0 rgba(0,0,0,.14); }
 .icon svg { display: block; }
 .card .icon + .tag { display: block; margin-bottom: 4px; }
+
+.shot-placeholder { aspect-ratio: 16 / 10; border: 2px dashed #c9d0dc; border-radius: var(--radius); background: var(--soft); display: grid; place-items: center; color: var(--muted); font-family: var(--mono); font-size: 13px; text-align: center; padding: 12px; }
