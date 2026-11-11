@@ -158,3 +158,31 @@ textarea { min-height: 150px; resize: vertical; }
 .card .icon + .tag { display: block; margin-bottom: 4px; }
 
 .shot-placeholder { aspect-ratio: 16 / 10; border: 2px dashed #c9d0dc; border-radius: var(--radius); background: var(--soft); display: grid; place-items: center; color: var(--muted); font-family: var(--mono); font-size: 13px; text-align: center; padding: 12px; }
+
+/* Home diagram: governance foundation, process -> delivery, design layer, feedback loop */
+.icon.sm { width: 42px; height: 42px; border-radius: 12px; margin: 0; flex: none; }
+.icon.sm svg { width: 27px; height: 27px; }
+.dg { margin: 32px 0 0; display: grid; gap: 14px; align-items: stretch;
+  grid-template-columns: 1fr 44px 1fr 72px;
+  grid-template-areas: "n1 ar n2 fb" "ds ds ds fb" "bs bs bs bs"; }
+.dg h3 { margin: 0 0 2px; font-size: 17px; }
+.dg p { margin: 0; font-size: 15px; color: var(--muted); }
+.dg-node { grid-area: n1; display: flex; gap: 14px; align-items: flex-start; background: #fff; border: 1px solid var(--line); border-top: 3px solid var(--blue); border-radius: var(--radius); padding: 18px 20px; }
+.dg-node.n2 { grid-area: n2; }
+.dg-arrow { grid-area: ar; display: grid; place-items: center; color: var(--blue); }
+.dg-design { grid-area: ds; display: flex; gap: 14px; align-items: center; background: #fff7e6; border: 1px solid #f3dca8; border-left: 4px solid var(--amber); border-radius: var(--radius); padding: 14px 18px; }
+.dg-design p { color: var(--ink); }
+.dg-base { grid-area: bs; display: flex; gap: 16px; align-items: center; color: #fff; background: linear-gradient(135deg, #1f46c9 0%, #12307f 100%); border-radius: var(--radius); padding: 20px 24px; box-shadow: 0 10px 22px -12px rgba(18,48,127,.7); }
+.dg-base h3 { font-size: 19px; }
+.dg-base p { color: rgba(255,255,255,.85); }
+.dg-base .icon { box-shadow: inset 0 0 0 1px rgba(255,255,255,.35), 0 4px 10px -4px rgba(0,0,0,.4); }
+.dg-fb { grid-area: fb; position: relative; margin-top: 44px; border-top: 2px solid var(--blue); border-right: 2px solid var(--blue); border-top-right-radius: 14px; display: flex; align-items: center; justify-content: center; margin-left: -14px; }
+.dg-fb::after { content: ""; position: absolute; right: -8px; bottom: -14px; border: 7px solid transparent; border-top: 10px solid var(--blue); }
+.dg-fb span { writing-mode: vertical-rl; background: var(--soft); padding: 8px 2px; margin-right: -12px; font-family: var(--mono); font-size: 12px; text-transform: uppercase; letter-spacing: .08em; color: var(--blue-dark); white-space: nowrap; }
+@media (max-width: 760px) {
+  .dg { grid-template-columns: 1fr; grid-template-areas: "n1" "ar" "n2" "ds" "fb" "bs"; gap: 10px; }
+  .dg-arrow svg { transform: rotate(90deg); }
+  .dg-fb { margin: 0; border: 0; border-radius: 0; flex-direction: column; padding: 2px 0 12px; }
+  .dg-fb::after { position: static; margin-top: 4px; right: auto; bottom: auto; }
+  .dg-fb span { writing-mode: horizontal-tb; margin: 0; padding: 0; background: none; }
+}

@@ -76,10 +76,10 @@ GLYPHS = {
 }
 
 
-def icon(name):
+def icon(name, cls=""):
     shapes = GLYPHS[name]
     body = "".join(_shape(s, True) for s in shapes) + "".join(_shape(s) for s in shapes)
-    return '<span class="icon" aria-hidden="true"><svg viewBox="0 0 32 32" width="35" height="35">%s</svg></span>' % body
+    return '<span class="icon %s" aria-hidden="true"><svg viewBox="0 0 32 32" width="35" height="35">%s</svg></span>' % (cls, body)
 
 
 def page(path, title, desc, body, current=""):
@@ -327,6 +327,14 @@ home = f"""<section class="hero"><div class="wrap">
 <section class="band"><div class="wrap">
 <p class="eyebrow">What I do</p>
 <h2>Governance that fits how the organization actually works</h2>
+<figure class="dg" aria-label="How the three areas of work connect">
+<div class="dg-node n1">{icon("flow", "sm")}<div><h3>Process and controls</h3><p>Fix the process first, so controls are light and followed.</p></div></div>
+<div class="dg-arrow ar" aria-hidden="true"><svg viewBox="0 0 44 24" width="44" height="24"><path d="M4 12 H38 M31 5 L39 12 L31 19" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+<div class="dg-node n2">{icon("roadmap", "sm")}<div><h3>Project and product delivery</h3><p>Controlled deployment, adoption and handover.</p></div></div>
+<div class="dg-design ds">{icon("pen", "sm")}<p><strong>Human-centered design runs through both.</strong> It is what makes the process and the controls usable.</p></div>
+<div class="dg-fb fb" aria-hidden="true"><span>Monitor and improve</span></div>
+<div class="dg-base bs">{icon("shield", "sm")}<div><h3>AI governance: the foundation</h3><p>Principles, accountability and guardrails that everything above builds on.</p></div></div>
+</figure>
 <div class="grid three" style="margin-top:28px">
 <div class="card accent">{icon("shield")}<h3>AI governance</h3><p>Find the AI in use, assess risk and maturity, set up the operating model and controls, and prepare for regulation, then transition ownership to your team.</p></div>
 <div class="card accent">{icon("flow")}<h3>Process and controls</h3><p>Fix the process first. Six Sigma discipline applied to audit findings, compliance workflows and decision rules so controls are lighter and actually followed.</p></div>
