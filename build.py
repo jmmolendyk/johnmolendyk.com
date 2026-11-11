@@ -146,7 +146,7 @@ CASES = [
         "client": "Union Bank, mortgage banking",
         "years": "2017–2018",
         "role": "Senior Consultant, Document Governance",
-        "tags": [("Governance", ""), ("Audit response", ""), ("Process", ""), ("Design in context", "d")],
+        "tags": [("Governance", ""), ("Process", ""), ("Human-Centered", "d")],
         "card_stat": "5,000+ → ~500",
         "card_stat_note": "records rationalized into controlled documents",
         "summary": "Audit findings exposed scattered, unversioned mortgage documents. I led the work to turn 5,000+ records into a controlled, role-based library the bank could defend to auditors.",
@@ -179,7 +179,7 @@ CASES = [
         "client": "Wells Fargo / Wachovia, wealth management",
         "years": "2010–2011",
         "role": "Senior Consultant / Product Owner",
-        "tags": [("Project delivery", ""), ("Risk & controls", ""), ("Data migration", ""), ("Design in context", "d")],
+        "tags": [("Delivery", ""), ("Governance", ""), ("Human-Centered", "d")],
         "card_stat": "Zero",
         "card_stat_note": "financial losses across three data-migration weekends",
         "summary": "Core transaction systems went offline during a bank conversion, but wealth clients still expected to move large sums. I designed and led the continuity solution that kept balances accurate and fraud controls intact.",
@@ -211,7 +211,7 @@ CASES = [
         "client": "Alliance Healthcare Services",
         "years": "2015–2017",
         "role": "Technical Product Owner / Lead Product Designer",
-        "tags": [("Process redesign", ""), ("Product delivery", ""), ("Compliance workflow", ""), ("Design in context", "d")],
+        "tags": [("Process", ""), ("Delivery", ""), ("Human-Centered", "d")],
         "card_stat": "1,000+",
         "card_stat_note": "provider sites moved off mailed paper surveys",
         "summary": "A 53-page mailed survey, spreadsheets and email were hiding the customer requests that mattered. I redesigned the process and delivered a digital platform across Qualtrics and Salesforce.",
@@ -244,7 +244,7 @@ CASES = [
         "client": "Meta / Reality Labs",
         "years": "2021–2023",
         "role": "Senior UX Researcher, AI / Voice",
-        "tags": [("AI governance", ""), ("Privacy & disclosure", ""), ("Strategy", ""), ("Design in context", "d")],
+        "tags": [("Governance", ""), ("Human-Centered", "d")],
         "card_stat": "30%",
         "card_stat_note": "more new voice users from one research-driven UI change",
         "summary": "Speech-to-text and AI features raise privacy and trust questions users notice immediately. I led research that shaped disclosure, adoption and roadmap decisions with Product, Privacy, Legal and Compliance.",
@@ -329,16 +329,17 @@ home = f"""<section class="hero"><div class="wrap">
 <section class="band"><div class="wrap">
 <p class="eyebrow">What I do</p>
 <h2>Governance that fits how the organization actually works</h2>
+<p class="lede">Four disciplines in one practitioner: fewer handoffs, and controls that survive contact with the business.</p>
 <figure class="model">
 <ol class="model-steps">
-<li class="mstep"><span class="mnum">01</span><div class="mart"><img src="/assets/step-process.png" alt="" width="270" height="122"></div><h3>Process Design</h3><p class="mkick">Integrate AI</p><p>Fix the process first, then build AI into workflows with clear roles, decisions and handoffs.</p></li>
+<li class="mstep"><span class="mnum">01</span><div class="mart"><img src="/assets/step-process.png" alt="" width="270" height="122"></div><h3>Process Design</h3><p class="mkick">Integrate AI</p><p>Fix the process first, then build AI into workflows with clear roles, decisions and handoffs.</p><span class="mchip">Six Sigma Black Belt</span></li>
 <li class="marrow" aria-hidden="true">&rarr;</li>
-<li class="mstep center"><span class="mnum">02</span><div class="mart"><img src="/assets/step-human.png" alt="" width="265" height="149"></div><h3>Human-Centered</h3><p class="mkick">Enable oversight</p><p>Give people the tools, information and controls to oversee AI, and design governance they will actually follow.</p></li>
+<li class="mstep center"><span class="mnum">02</span><div class="mart"><img src="/assets/step-human.png" alt="" width="265" height="149"></div><h3>Human-Centered</h3><p class="mkick">Enable oversight</p><p>Give people the tools, information and controls to oversee AI, and design governance they will actually follow.</p><span class="mchip">M.S. HCI + Design</span></li>
 <li class="marrow" aria-hidden="true">&rarr;</li>
-<li class="mstep"><span class="mnum">03</span><div class="mart"><img src="/assets/step-delivery.png" alt="" width="298" height="128"></div><h3>Product Delivery</h3><p class="mkick">Execute reliably</p><p>Take it from discovery to controlled deployment: roadmaps, vendors, migrations and adoption.</p></li>
+<li class="mstep"><span class="mnum">03</span><div class="mart"><img src="/assets/step-delivery.png" alt="" width="298" height="128"></div><h3>Product Delivery</h3><p class="mkick">Execute reliably</p><p>Take it from discovery to controlled deployment: roadmaps, vendors, migrations and adoption.</p><span class="mchip">CSM &middot; CSPO</span></li>
 </ol>
 <div class="mloop" aria-hidden="true"><span class="up"></span><span class="label">Continuous learning</span><span class="down"></span></div>
-<div class="mbase">{icon("shield", "sm")}<div><h3>AI Governance <span>The foundation</span></h3><p>Establish the principles, accountability and guardrails for safe, ethical, responsible AI, then hand ownership to your team.</p></div></div>
+<div class="mbase">{icon("shield", "sm")}<div><h3>AI Governance <span>The foundation</span></h3><p>Establish the principles, accountability and guardrails for safe, ethical, responsible AI, owned by your team.</p><div class="mchips"><span class="mchip">AIGP</span><span class="mchip">ISO 42001 Lead Implementer</span><span class="mchip">CIPM</span></div></div></div>
 </figure>
 <p style="margin-top:28px">Organization-level engagements, including fractional AI governance, run through <a href="{FLOWHAUS}">Flowhaus.ai</a>.</p>
 </div></section>
@@ -351,18 +352,6 @@ home = f"""<section class="hero"><div class="wrap">
 </div></section>
 
 <section class="band"><div class="wrap">
-<p class="eyebrow">The skill mix</p>
-<h2>Four disciplines, one practitioner</h2>
-<p class="lede">Most governance gaps sit between disciplines. Having all four in one person means fewer handoffs and controls that survive contact with the business.</p>
-<div class="grid four" style="margin-top:28px">
-<div class="card">{icon("cog")}<span class="tag">Process engineering</span><h3>Six Sigma Black Belt</h3><p>Remove waste and rework before adding controls or automation.</p></div>
-<div class="card">{icon("layers")}<span class="tag">AI governance</span><h3>AIGP &middot; ISO 42001 &middot; CIPM</h3><p>Frameworks, risk, privacy and operating models.</p></div>
-<div class="card">{icon("board")}<span class="tag">Product delivery</span><h3>CSM &middot; CSPO</h3><p>Roadmaps, vendors and delivery to sustainable operations.</p></div>
-<div class="card design">{icon("pen")}<span class="tag">Human-centered design</span><h3>M.S., HCI + Design</h3><p>Makes governance usable, so people follow it instead of working around it.</p></div>
-</div>
-</div></section>
-
-<section><div class="wrap">
 <div class="callout"><h3>Optimize before automate</h3><p>Start with one system or issue, tailor governance to the organization, and expand once it works. <a href="/approach/">How I work &rarr;</a></p></div>
 <div class="actions" style="margin-top:32px"><a class="btn" href="{CALENDLY}">Book a discovery call</a><a class="btn ghost" href="/contact/">Send a message</a></div>
 </div></section>"""
