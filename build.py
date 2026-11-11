@@ -374,6 +374,7 @@ home = f"""<section class="hero"><div class="wrap">
 <ul class="glue-row"><li>Leadership</li><li>Legal</li><li>Compliance</li><li>IT</li><li>Business units</li></ul>
 <div class="glue-bar" aria-hidden="true"></div>
 <span class="glue-pill">One voice</span>
+<blockquote class="quote glue-quote"><p>\u201cJohn has a great attention to detail and a unique ability to make complex topics easy to understand.\u201d</p><footer>Senior Manager, Project Development (ex-United Health Group), on the healthcare feedback platform</footer></blockquote>
 </div>
 <p style="margin-top:28px">Organization-level engagements, including fractional AI governance, run through <a href="{FLOWHAUS}">Flowhaus.ai</a>.</p>
 </div></section>
