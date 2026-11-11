@@ -69,6 +69,8 @@ GLYPHS = {
                ("path-f", "M16 4.5 L28 10.5 L16 16.5 L4 10.5 Z", A)],
     "board": [("rect", (4, 5, 7, 7), W), ("rect", (4, 14.5, 7, 7), W), ("rect", (13, 5, 7, 11), W),
               ("rect", (13, 18.5, 7, 4.5), W, .7), ("rect", (22, 5, 7, 7), W, .7), ("rect", (22, 14.5, 7, 12), A)],
+    "person": [("circle-f", (11, 10.5, 4.4), W), ("path-f", "M3.5 27.5 C3.5 20.5 7 17.5 11 17.5 C15 17.5 18.5 20.5 18.5 27.5 Z", W),
+               ("path-s", "M21.5 9 H29 M21.5 15 H29 M21.5 21 H29", W, .85, 1.8), ("circle-f", (25.5, 15, 2.5), A)],
     "pen": [("path-s", "M8 7.5 L6 25 M24 7.5 L26 25", W, .6, 1.3),
             ("path-s", "M6 25 C7 9 25 9 26 25", W, 1, 2.8),
             ("rect", (3.9, 23, 4.2, 4.2), W), ("rect", (23.9, 23, 4.2, 4.2), W),
@@ -327,13 +329,17 @@ home = f"""<section class="hero"><div class="wrap">
 <section class="band"><div class="wrap">
 <p class="eyebrow">What I do</p>
 <h2>Governance that fits how the organization actually works</h2>
-<figure class="dg" aria-label="How the three areas of work connect">
-<div class="dg-node n1">{icon("flow", "sm")}<div><h3>Process and controls</h3><p>Fix the process first, so controls are light and followed.</p></div></div>
-<div class="dg-arrow ar" aria-hidden="true"><svg viewBox="0 0 44 24" width="44" height="24"><path d="M4 12 H38 M31 5 L39 12 L31 19" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-<div class="dg-node n2">{icon("roadmap", "sm")}<div><h3>Project and product delivery</h3><p>Controlled deployment, adoption and handover.</p></div></div>
-<div class="dg-design ds">{icon("pen", "sm")}<p><strong>Human-centered design runs through both.</strong> It is what makes the process and the controls usable.</p></div>
-<div class="dg-fb fb" aria-hidden="true"><span>Monitor and improve</span></div>
-<div class="dg-base bs">{icon("shield", "sm")}<div><h3>AI governance: the foundation</h3><p>Principles, accountability and guardrails that everything above builds on.</p></div></div>
+<figure class="dg-wrap">
+<img class="dg-img" src="/assets/ai-governance-model.png" width="1520" height="733" alt="Diagram. Three steps run left to right: 01 Process Design, which integrates AI into workflows with clear roles, decisions and handoffs; 02 Human-Centered, which gives people the tools, information and controls to oversee AI models and agents; 03 Product Delivery, which connects product strategy to reliable implementation. Beneath them, AI governance is the foundation, establishing principles, accountability and guardrails, with a continuous learning loop back to the steps.">
+<div class="dg" aria-hidden="false">
+<div class="dg-step">{icon("flow", "sm")}<div><span class="dg-num">01</span><h3>Process Design</h3><p class="dg-kick">Integrate AI</p><p>Build AI into workflows from the start, with clear roles, decisions and handoffs.</p></div></div>
+<div class="dg-down" aria-hidden="true">&darr;</div>
+<div class="dg-step">{icon("person", "sm")}<div><span class="dg-num">02</span><h3>Human-Centered</h3><p class="dg-kick">Enable oversight</p><p>Give people the tools, information and controls to oversee AI models and autonomous agents effectively.</p></div></div>
+<div class="dg-down" aria-hidden="true">&darr;</div>
+<div class="dg-step">{icon("board", "sm")}<div><span class="dg-num">03</span><h3>Product Delivery</h3><p class="dg-kick">Execute reliably</p><p>Connect product strategy to implementation for reliable, predictable delivery.</p></div></div>
+<div class="dg-loop" aria-hidden="true">&darr; Continuous learning &uarr;</div>
+<div class="dg-base">{icon("shield", "sm")}<div><h3>AI Governance: the foundation</h3><p>Establish the principles, accountability and guardrails for safe, ethical, responsible AI.</p></div></div>
+</div>
 </figure>
 <div class="grid three" style="margin-top:28px">
 <div class="card accent">{icon("shield")}<h3>AI governance</h3><p>Find the AI in use, assess risk and maturity, set up the operating model and controls, and prepare for regulation, then transition ownership to your team.</p></div>
