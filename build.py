@@ -328,8 +328,8 @@ home = f"""<section class="hero"><div class="wrap">
 
 <section class="band"><div class="wrap">
 <p class="eyebrow">What I do</p>
-<h2>Governance that fits how the organization actually works</h2>
-<p class="lede">Four disciplines in one practitioner: fewer handoffs, and controls that survive contact with the business.</p>
+<h2>Operationalizing AI governance</h2>
+<p class="lede">Policy on paper is the easy part. Making it work takes organizational change: clear roles, decision rights, training, monitoring and ownership your team can sustain.</p>
 <figure class="model">
 <ol class="model-steps">
 <li class="mstep"><span class="mnum">01</span><div class="mart"><img src="/assets/step-process.png" alt="" width="270" height="122"></div><h3>Process Design</h3><p class="mkick">Integrate AI</p><p>Fix the process first, then build AI into workflows with clear roles, decisions and handoffs.</p><span class="mchip">Six Sigma Black Belt</span></li>
@@ -356,6 +356,14 @@ home = f"""<section class="hero"><div class="wrap">
 <g stroke="#ffffff" stroke-width="2" stroke-linecap="round" opacity=".85"><path d="M28 105 H92 M114 105 H178 M200 105 H264 M71 75 H135 M157 75 H221 M114 45 H178" /></g>
 </svg></div><div><h3>AI Governance <span>The foundation</span></h3><p>Establish the principles, accountability and guardrails for safe, ethical, responsible AI, owned by your team.</p><div class="mchips"><span class="mchip">AIGP</span><span class="mchip">ISO 42001 Lead Implementer</span><span class="mchip">CIPM</span></div></div></div>
 </figure>
+<div class="glue">
+<p class="eyebrow">The glue</p>
+<h3>One voice across the whole organization</h3>
+<p>AI governance breaks down in the gaps between teams. I work in those gaps, translating between functions so decisions, controls and language stay consistent.</p>
+<ul class="glue-row"><li>Leadership</li><li>Legal</li><li>Compliance</li><li>IT</li><li>Business units</li></ul>
+<div class="glue-bar" aria-hidden="true"></div>
+<span class="glue-pill">One voice</span>
+</div>
 <p style="margin-top:28px">Organization-level engagements, including fractional AI governance, run through <a href="{FLOWHAUS}">Flowhaus.ai</a>.</p>
 </div></section>
 

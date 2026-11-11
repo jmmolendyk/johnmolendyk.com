@@ -206,3 +206,23 @@ textarea { min-height: 150px; resize: vertical; }
 .mpanel svg { display: block; width: 100%; height: auto; }
 .mbase h3 { font-size: 26px; }
 @media (max-width: 860px) { .mbase { grid-template-columns: 1fr; gap: 18px; padding: 20px; } .mpanel { max-width: 340px; } .mbase h3 { font-size: 22px; } }
+
+/* The glue: stakeholders converging on one voice */
+.glue { margin-top: 40px; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 30px 32px 34px; text-align: center; }
+.glue .eyebrow { margin-bottom: 8px; }
+.glue h3 { font-size: 26px; margin: 0 0 8px; }
+.glue > p:not(.eyebrow) { max-width: 640px; margin: 0 auto; color: var(--muted); }
+.glue-row { list-style: none; margin: 28px 0 0; padding: 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
+.glue-row li { position: relative; background: var(--soft); border: 1px solid var(--line); border-radius: 10px; padding: 14px 8px; font-weight: 600; font-size: 15px; }
+.glue-row li::after { content: ""; position: absolute; left: 50%; top: 100%; width: 2px; height: 26px; margin-left: -1px; background: var(--blue); opacity: .55; }
+.glue-bar { position: relative; margin: 26px 10% 0; border-top: 2px solid rgba(31,70,201,.55); height: 24px; }
+.glue-bar::after { content: ""; position: absolute; left: 50%; top: 0; width: 2px; height: 24px; margin-left: -1px; background: var(--blue); opacity: .55; }
+.glue-pill { display: inline-block; font-weight: 600; font-size: 17px; color: #4a3000; background: linear-gradient(180deg, #ffd988, #f0a014); border: 2px solid #17355f; border-radius: 999px; padding: 9px 28px; box-shadow: 0 8px 16px -8px rgba(18,48,127,.5), inset 0 1px 0 rgba(255,255,255,.6); }
+@media (max-width: 760px) {
+  .glue { padding: 24px 18px 26px; }
+  .glue h3 { font-size: 22px; }
+  .glue-row { grid-template-columns: repeat(2, 1fr); }
+  .glue-row li:last-child { grid-column: 1 / -1; }
+  .glue-row li::after, .glue-bar { display: none; }
+  .glue-pill { margin-top: 22px; }
+}
