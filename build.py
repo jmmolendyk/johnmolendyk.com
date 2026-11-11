@@ -234,6 +234,10 @@ CASES = [
             ("Outcome",
              "<p>Time to document and manage a request dropped 64%, saving 13 minutes each, and every contact request now reached operations within 24 hours of service. Sites got self-service branded surveys, and survey data was shared across CX, operations, sales and compliance. Compliance and Legal also saw their incident-reporting cycle time cut by more than half.</p>"),
         ],
+        "quotes": {
+            0: ("John\u2019s influence, creativity and resourcefulness regularly made the difference.", "Senior Manager, Project Development (ex-United Health Group)"),
+            3: ("John has a great attention to detail and a unique ability to make complex topics easy to understand.", "Senior Manager, Project Development (ex-United Health Group)"),
+        },
         "design": "Research, wireframes and pilot iterations drove adoption. The people closing requests were field teams on tablets and phones, so the process only worked once it fit their hands and their time.",
     },
     {
@@ -290,7 +294,14 @@ def work_card(c):
 
 for c in CASES:
     stats = "".join('<div class="stat-box"><b>%s</b><span>%s</span></div>' % s for s in c["stats"])
-    secs = "".join("<h2>%s</h2>%s" % s for s in c["sections"])
+    def quote(q):
+        return '<blockquote class="quote"><p>\u201c%s\u201d</p><footer>%s</footer></blockquote>' % q
+    qs = c.get("quotes", {})
+    secs = ""
+    for idx, sec in enumerate(c["sections"]):
+        if idx in qs:
+            secs += quote(qs[idx])
+        secs += "<h2>%s</h2>%s" % sec
     nav_prev = '<a href="/work/%s/">&larr; %s</a>' % (c["prev"]["slug"], c["prev"]["short"]) if c["prev"] else '<a href="/work/">&larr; All work</a>'
     nav_next = '<a href="/work/%s/">%s &rarr;</a>' % (c["next"]["slug"], c["next"]["short"]) if c["next"] else '<a href="/work/">All work &rarr;</a>'
     lg, lg_alt = c["logo"]
