@@ -329,23 +329,17 @@ home = f"""<section class="hero"><div class="wrap">
 <section class="band"><div class="wrap">
 <p class="eyebrow">What I do</p>
 <h2>Governance that fits how the organization actually works</h2>
-<figure class="dg-wrap">
-<img class="dg-img" src="/assets/ai-governance-model.png" width="1520" height="733" alt="Diagram. Three steps run left to right: 01 Process Design, which integrates AI into workflows with clear roles, decisions and handoffs; 02 Human-Centered, which gives people the tools, information and controls to oversee AI models and agents; 03 Product Delivery, which connects product strategy to reliable implementation. Beneath them, AI governance is the foundation, establishing principles, accountability and guardrails, with a continuous learning loop back to the steps.">
-<div class="dg" aria-hidden="false">
-<div class="dg-step">{icon("flow", "sm")}<div><span class="dg-num">01</span><h3>Process Design</h3><p class="dg-kick">Integrate AI</p><p>Build AI into workflows from the start, with clear roles, decisions and handoffs.</p></div></div>
-<div class="dg-down" aria-hidden="true">&darr;</div>
-<div class="dg-step">{icon("person", "sm")}<div><span class="dg-num">02</span><h3>Human-Centered</h3><p class="dg-kick">Enable oversight</p><p>Give people the tools, information and controls to oversee AI models and autonomous agents effectively.</p></div></div>
-<div class="dg-down" aria-hidden="true">&darr;</div>
-<div class="dg-step">{icon("board", "sm")}<div><span class="dg-num">03</span><h3>Product Delivery</h3><p class="dg-kick">Execute reliably</p><p>Connect product strategy to implementation for reliable, predictable delivery.</p></div></div>
-<div class="dg-loop" aria-hidden="true">&darr; Continuous learning &uarr;</div>
-<div class="dg-base">{icon("shield", "sm")}<div><h3>AI Governance: the foundation</h3><p>Establish the principles, accountability and guardrails for safe, ethical, responsible AI.</p></div></div>
-</div>
+<figure class="model">
+<ol class="model-steps">
+<li class="mstep"><span class="mnum">01</span><div class="mart"><img src="/assets/step-process.png" alt="" width="270" height="122"></div><h3>Process Design</h3><p class="mkick">Integrate AI</p><p>Fix the process first, then build AI into workflows with clear roles, decisions and handoffs.</p></li>
+<li class="marrow" aria-hidden="true">&rarr;</li>
+<li class="mstep center"><span class="mnum">02</span><div class="mart"><img src="/assets/step-human.png" alt="" width="265" height="149"></div><h3>Human-Centered</h3><p class="mkick">Enable oversight</p><p>Give people the tools, information and controls to oversee AI, and design governance they will actually follow.</p></li>
+<li class="marrow" aria-hidden="true">&rarr;</li>
+<li class="mstep"><span class="mnum">03</span><div class="mart"><img src="/assets/step-delivery.png" alt="" width="298" height="128"></div><h3>Product Delivery</h3><p class="mkick">Execute reliably</p><p>Take it from discovery to controlled deployment: roadmaps, vendors, migrations and adoption.</p></li>
+</ol>
+<div class="mloop" aria-hidden="true"><span class="up"></span><span class="label">Continuous learning</span><span class="down"></span></div>
+<div class="mbase">{icon("shield", "sm")}<div><h3>AI Governance <span>The foundation</span></h3><p>Establish the principles, accountability and guardrails for safe, ethical, responsible AI, then hand ownership to your team.</p></div></div>
 </figure>
-<div class="grid three" style="margin-top:28px">
-<div class="card accent">{icon("shield")}<h3>AI governance</h3><p>Find the AI in use, assess risk and maturity, set up the operating model and controls, and prepare for regulation, then transition ownership to your team.</p></div>
-<div class="card accent">{icon("flow")}<h3>Process and controls</h3><p>Fix the process first. Six Sigma discipline applied to audit findings, compliance workflows and decision rules so controls are lighter and actually followed.</p></div>
-<div class="card accent">{icon("roadmap")}<h3>Project and product delivery</h3><p>From discovery to controlled deployment: roadmaps, vendors, migrations and adoption, delivered with Scrum and product practice.</p></div>
-</div>
 <p style="margin-top:28px">Organization-level engagements, including fractional AI governance, run through <a href="{FLOWHAUS}">Flowhaus.ai</a>.</p>
 </div></section>
 
