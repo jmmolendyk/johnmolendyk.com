@@ -528,8 +528,8 @@ LAB = [
     {
         "slug": "insights",
         "name": "Insights",
-        "tags": ["Personal build", "AI governance", "Articles"],
-        "summary": "[Placeholder] One or two sentences on what Insights is and who it is for.",
+        "tags": ["Personal build", "AI governance", "Articles", "Knowledge center"],
+        "summary": "An AI-powered research platform that collects, organizes and synthesizes news and articles about AI governance, helping turn a rapidly changing information landscape into actionable insights.",
         "what": "[Placeholder] Describe the app: a collection of AI governance articles presented under the Insights name. What can a visitor do with it?",
         "why": "[Placeholder] Why you built it and the gap it fills.",
         "how": "[Placeholder] How it was built: tools, the role AI played, what you decided versus what the AI drafted.",
@@ -539,7 +539,7 @@ LAB = [
         "slug": "ai-register",
         "name": "AI Register",
         "tags": ["Personal build", "AI governance", "Workspace"],
-        "summary": "[Placeholder] One or two sentences on what AI Register is and who it is for.",
+        "summary": "An AI governance workspace for documenting systems, models, datasets and agents, while assessing risks, assigning accountability and supporting ongoing oversight throughout the AI lifecycle.",
         "what": "[Placeholder] Describe the AI governance workspace: what it tracks and what a user can do in it.",
         "why": "[Placeholder] Why you built it, and how it connects to the governance work you do for organizations.",
         "how": "[Placeholder] How it was built: tools, the role AI played, what you decided versus what the AI drafted, and how it handles data.",
@@ -554,10 +554,10 @@ def lab_tags(tags):
 
 lab_cards = "".join(
     f"""<a class="card work-card" href="/lab/{e['slug']}/">
-{lab_tags(e['tags'])}
 <h3>{e['name']}</h3>
 <p class="muted">{e['summary']}</p>
-<span class="more">Open &rarr;</span>
+{lab_tags(e['tags'])}
+<span class="more">Details &rarr;</span>
 </a>"""
     for e in LAB
 )
