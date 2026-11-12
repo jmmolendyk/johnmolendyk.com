@@ -527,13 +527,41 @@ page("/contact/", "Contact | John Molendyk", "Book a discovery call or send a me
 LAB = [
     {
         "slug": "insights",
-        "name": "Insights",
+        "name": "Insight",
         "tags": ["Personal build", "AI governance", "Articles", "Knowledge center"],
         "summary": "An AI-powered research platform that collects, organizes and synthesizes news and articles about AI governance, helping turn a rapidly changing information landscape into actionable insights.",
         "what": "[Placeholder] Describe the app: a collection of AI governance articles presented under the Insights name. What can a visitor do with it?",
         "why": "[Placeholder] Why you built it and the gap it fills.",
         "how": "[Placeholder] How it was built: tools, the role AI played, what you decided versus what the AI drafted.",
-        "links": "[Placeholder] Live demo and source links, or “Coming soon.”",
+        "links": "Coming soon.",
+        "lede": "An AI-powered news and research platform designed to make it easier to follow developments in AI governance, understand emerging trends and turn information into informed perspectives.",
+        "stat": "2,500+ articles from more than 290 sources",
+        "lead_img": ("insight-briefing", "Insight Daily Briefing: top stories, collection routes and source counts"),
+        "body": """<h2>What it is</h2>
+<p>Insight collects articles and organizes them into common-sense themes. It highlights specific sources and brings forward the articles most relevant to what I&rsquo;m working on now.</p>
+<p>A daily briefing gives me a quick snapshot, where I can expand the categories I care about and collapse the rest.</p>
+<p>I can search the full library of collected articles and, from within any article, start developing ideas for my own writing while the tool surfaces other articles and sources worth considering.</p>
+<p>I can also manage my sources and create new categories for the article taxonomy.</p>
+<figure class="shot"><img src="/assets/lab/insight-library.jpg" alt="Insight Library: collected articles organized by governance category, with search and filters" loading="lazy"><figcaption>Library: every collected article, organized by governance category.</figcaption></figure>
+<figure class="shot"><img src="/assets/lab/insight-writing.jpg" alt="Insight Writing ideas: start from a perspective to test and build a research brief" loading="lazy"><figcaption>Writing ideas: start with a perspective to test and build a research brief from the evidence.</figcaption></figure>
+<h2>Why I built it</h2>
+<p>Staying current in a field as fast-moving as AI governance is nearly impossible, and the pace keeps increasing. New threats, technologies, solutions, regulations, standards and practices emerge constantly across multiple disciplines.</p>
+<p>I built Insight to keep me focused on information from core sources on a regular basis, while exposing me to new sources without inundating me.</p>
+<p>It goes beyond a list of bookmarks or a spreadsheet. AI parses newsletters and traverses my sources for me, so I get a consolidated perspective quickly and know there is one place where the material I care about most lives.</p>
+<p>I can add individual articles or sources, or drop in a newsletter and have the articles and new sources collected. I can also see how each source performs and decide whether it is meeting my needs or should be removed.</p>
+<h2>Approach</h2>
+<p>Insight was developed through an iterative, AI-assisted process. I defined the product requirements, information architecture, taxonomy, collection workflow and editorial experience, and used AI coding tools to help implement and refine the application.</p>
+<p>The design emphasizes source quality, relevance and traceability. Rather than treating AI-generated summaries as authoritative, the platform supports research and judgment while preserving access to the original sources.</p>
+<p>The project continues to evolve as I explore more effective ways to use AI for information management, research and content development.</p>
+<h2>Planned updates</h2>
+<h3>Quality review and update</h3>
+<p>Now that I have collected enough articles and sources, I&rsquo;ll work with AI to assess the quality of both. Some of the early collection was incomplete, though the articles themselves are relevant, so rebuilding the content around each article is key to keeping it searchable and relevant.</p>
+<h3>Personalization</h3>
+<p>I want to tell Insight what I&rsquo;m currently working on and focused on, so my daily briefing is as relevant as possible.</p>
+<h3>Diverse storage</h3>
+<p>A home for white papers, frameworks, standards and other knowledge beyond articles that I want considered in my own writing. That includes documents I create myself and my own published articles, kept for reference in future work.</p>
+<h3>Writing center</h3>
+<p>Grounding with RAG in my voice and writing style, so suggested drafts start closer to how I write. I also plan more control over article creation: length, variability, topics, number of sources, number and placement of quotes, citations in a couple of useful formats, and multiple versions when needed.</p>""",
     },
     {
         "slug": "ai-register",
@@ -572,6 +600,24 @@ page("/lab/", "Lab | John Molendyk", "Apps built with AI and working artifacts f
      "/lab/")
 
 for e in LAB:
+    if e.get("body"):
+        page("/lab/%s/" % e["slug"], "%s | Lab | John Molendyk" % e["name"], e["lede"],
+             f"""<section class="case-head"><div class="wrap">
+<p class="eyebrow">Lab</p>
+<h1>{e['name']}</h1>
+<p class="lede">{e['lede']}</p>
+{lab_tags(e['tags'])}
+<p class="lab-stat">{e['stat']}</p>
+</div></section>
+<section style="padding-top:8px"><div class="wrap">
+<figure class="shot lead"><img src="/assets/lab/{e['lead_img'][0]}.jpg" alt="{e['lead_img'][1]}"><figcaption>Daily Briefing</figcaption></figure>
+</div></section>
+<section style="padding-top:24px"><div class="wrap"><div class="prose">
+{e['body']}
+<h2>Links</h2><p>{e['links']}</p>
+<div class="case-nav"><a href="/lab/">&larr; Lab</a><a href="/contact/">Questions? Get in touch &rarr;</a></div>
+</div></div></section>""", "/lab/")
+        continue
     shots = "".join('<div class="shot-placeholder">Screenshot placeholder %d</div>' % i for i in (1, 2))
     page("/lab/%s/" % e["slug"], "%s | Lab | John Molendyk" % e["name"], e["summary"],
          f"""<section class="case-head"><div class="wrap">
