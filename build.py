@@ -71,6 +71,9 @@ GLYPHS = {
               ("rect", (13, 18.5, 7, 4.5), W, .7), ("rect", (22, 5, 7, 7), W, .7), ("rect", (22, 14.5, 7, 12), A)],
     "person": [("circle-f", (11, 10.5, 4.4), W), ("path-f", "M3.5 27.5 C3.5 20.5 7 17.5 11 17.5 C15 17.5 18.5 20.5 18.5 27.5 Z", W),
                ("path-s", "M21.5 9 H29 M21.5 15 H29 M21.5 21 H29", W, .85, 1.8), ("circle-f", (25.5, 15, 2.5), A)],
+    "people": [("circle-f", (7.5, 12.5, 3.2), W, .7), ("path-f", "M1.5 27 C1.5 21 4 18.5 7.5 18.5 C9.5 18.5 11 19.2 12 20.4 L12 27 Z", W, .7),
+               ("circle-f", (24.5, 12.5, 3.2), W, .7), ("path-f", "M30.5 27 C30.5 21 28 18.5 24.5 18.5 C22.5 18.5 21 19.2 20 20.4 L20 27 Z", W, .7),
+               ("circle-f", (16, 10.5, 4.6), A), ("path-f", "M7.5 29 C7.5 22 11 18.2 16 18.2 C21 18.2 24.5 22 24.5 29 Z", W)],
     "pen": [("path-s", "M8 7.5 L6 25 M24 7.5 L26 25", W, .6, 1.3),
             ("path-s", "M6 25 C7 9 25 9 26 25", W, 1, 2.8),
             ("rect", (3.9, 23, 4.2, 4.2), W), ("rect", (23.9, 23, 4.2, 4.2), W),
@@ -112,14 +115,14 @@ def page(path, title, desc, body, current=""):
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-header"><div class="wrap">
 <a class="brand" href="/">John Molendyk</a>
-<nav class="nav" aria-label="Main">{nav}<a class="nav-cta" href="{FLOWHAUS}">Flowhaus.ai &#8599;</a></nav>
+<nav class="nav" aria-label="Main">{nav}<a class="nav-cta" href="{FLOWHAUS}" target="_blank" rel="noopener">Flowhaus.ai &#8599;</a></nav>
 </div></header>
 <main id="main">
 {body}
 </main>
 <footer class="site-footer"><div class="wrap">
 <div>&copy; 2026 John Molendyk</div>
-<div class="foot-links"><a href="/work/">Work</a>{lab_link}<a href="/approach/">Approach</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="{LINKEDIN}">LinkedIn</a><a href="{FLOWHAUS}">Flowhaus.ai</a></div>
+<div class="foot-links"><a href="/work/">Work</a>{lab_link}<a href="/approach/">Approach</a><a href="/about/">About</a><a href="/contact/">Contact</a><a href="{LINKEDIN}">LinkedIn</a><a href="{FLOWHAUS}" target="_blank" rel="noopener">Flowhaus.ai</a></div>
 </div></footer>
 </body>
 </html>
@@ -273,6 +276,9 @@ CASES = [
         "design": "This is the project where design research was the governance mechanism: the disclosure was the control, and testing it with users is how we knew it worked.",
     },
 ]
+_order = ["wealth-migration-continuity", "healthcare-feedback-platform", "mortgage-document-governance", "ai-voice-privacy-research"]
+CASES.sort(key=lambda c: _order.index(c["slug"]))  # chronological (oldest first): Work page and prev/next
+HOME_CASES = sorted(CASES, key=lambda c: 0 if c["slug"] == "ai-voice-privacy-research" else 1)  # Meta first, then chronological
 for i, c in enumerate(CASES):
     c["prev"] = CASES[i - 1] if i > 0 else None
     c["next"] = CASES[i + 1] if i < len(CASES) - 1 else None
@@ -330,11 +336,10 @@ for c in CASES:
 # ---------------------------------------------------------------- home
 home = f"""<section class="hero"><div class="wrap">
 <p class="eyebrow">AI governance &middot; process &middot; delivery</p>
-<h1>I help organizations put AI governance in place, and make it stick.</h1>
-<p class="lede">Twenty years of delivering controls, processes and technology in financial services, healthcare and tech, now focused on governance that enables AI adoption instead of slowing it down.</p>
+<h1>I help organizations put governance in place, and make it work.</h1>
+<p class="lede">Twenty years of delivering controls, processes and technology in financial services, healthcare and tech, now focused on governance that enables AI adoption.</p>
 <div class="actions"><a class="btn" href="{CALENDLY}">Book a discovery call</a><a class="btn ghost" href="/work/">See the work</a></div>
 <ul class="badges"><li>AIGP</li><li>ISO/IEC 42001 Lead Implementer (BSI)</li><li>CIPM</li><li>Six Sigma Black Belt</li><li>CSM &middot; CSPO</li></ul>
-<p class="frameworks">Works with NIST AI RMF, ISO/IEC 42001, OECD AI Principles and privacy requirements.</p>
 </div></section>
 
 <section class="band"><div class="wrap">
@@ -368,26 +373,25 @@ home = f"""<section class="hero"><div class="wrap">
 </svg></div><div><h3>AI Governance <span>The foundation</span></h3><p>Establish the principles, accountability and guardrails for safe, ethical, responsible AI, owned by your team.</p><div class="mchips"><span class="mchip">AIGP</span><span class="mchip">ISO 42001 Lead Implementer</span><span class="mchip">CIPM</span></div></div></div>
 </figure>
 <div class="glue">
-<p class="eyebrow">The glue</p>
 <h3>One voice across the whole organization</h3>
-<p>AI governance breaks down in the gaps between teams. I work in those gaps, translating between functions so decisions, controls and language stay consistent.</p>
+<p>AI governance breaks down in the gaps between teams. I work in those gaps, translating between functions so decisions get made with clarity and transparency.</p>
 <ul class="glue-row"><li>Leadership</li><li>Legal</li><li>Compliance</li><li>IT</li><li>Business units</li></ul>
 <div class="glue-bar" aria-hidden="true"></div>
 <span class="glue-pill">One voice</span>
 <blockquote class="quote glue-quote"><p>\u201cJohn has a great attention to detail and a unique ability to make complex topics easy to understand.\u201d</p><footer>Senior Manager, Project Development (ex-United Health Group), on the healthcare feedback platform</footer></blockquote>
 </div>
-<p style="margin-top:28px">Organization-level engagements, including fractional AI governance, run through <a href="{FLOWHAUS}">Flowhaus.ai</a>.</p>
+<p style="margin-top:28px">Organization-level engagements, including fractional AI governance, run through <a href="{FLOWHAUS}" target="_blank" rel="noopener">Flowhaus.ai</a>.</p>
 </div></section>
 
 <section><div class="wrap">
 <p class="eyebrow">Selected work</p>
 <h2>Proof from regulated, high-stakes environments</h2>
-<div class="grid two" style="margin-top:28px">{"".join(work_card(c) for c in CASES)}</div>
+<div class="grid two" style="margin-top:28px">{"".join(work_card(c) for c in HOME_CASES)}</div>
 <p style="margin-top:24px"><a href="/work/">All case studies &rarr;</a></p>
 </div></section>
 
 <section class="band"><div class="wrap">
-<div class="callout"><h3>Optimize before automate</h3><p>Start with one system or issue, tailor governance to the organization, and expand once it works. <a href="/approach/">How I work &rarr;</a></p></div>
+<div class="callout"><h3>Optimize then automate</h3><p>Start with one system or issue, tailor governance to the organization, and expand once it works. <a href="/approach/">How I work &rarr;</a></p></div>
 <div class="actions" style="margin-top:32px"><a class="btn" href="{CALENDLY}">Book a discovery call</a><a class="btn ghost" href="/contact/">Send a message</a></div>
 </div></section>"""
 page(
@@ -412,27 +416,26 @@ page("/work/", "Work | John Molendyk", "Case studies in AI and privacy governanc
 # ---------------------------------------------------------------- approach
 approach = f"""<section class="hero" style="padding-bottom:24px"><div class="wrap">
 <p class="eyebrow">Approach</p>
-<h1>Optimize before automate. Govern so teams can move faster.</h1>
+<h1>Optimize then automate. Govern so teams can move faster.</h1>
 <p class="lede">The principle came from a Six Sigma engagement over twenty years ago and still holds for AI: fix the process, then add the technology, and keep the controls proportionate to the risk.</p>
 </div></section>
 <section style="padding-top:24px"><div class="wrap">
 <ol class="steps">
-<li><div><h3>See what exists</h3><p>Inventory current, planned and shadow AI, and the processes and data around it. You cannot govern what you cannot see.</p></div></li>
-<li><div><h3>Right-size the governance</h3><p>Assess risk and maturity, then tailor policies, roles and controls to the organization instead of importing a canned framework.</p></div></li>
-<li><div><h3>Pilot on one system or issue</h3><p>Prove the approach where it is cheapest to learn. Triggers for deeper assessment are defined here, not guessed.</p></div></li>
-<li><div><h3>Expand gradually</h3><p>Roll out to the next system once the pilot shows controls that integrate with existing business and technology operations.</p></div></li>
-<li><div><h3>Hand it over</h3><p>Transition ownership to your people, with monitoring and documentation that make audits and regulation routine.</p></div></li>
+<li><div><h3>Pilot one system or issue</h3><p>Choose one system or issue, follow the process and determine what works and what doesn&rsquo;t. Fix it, then build from that new knowledge and experience to increase the confidence of the team and allow them to move faster.</p></div></li>
+<li><div><h3>Adapt the governance</h3><p>Organizations are unique and require governance that matches how they operate and what is important to them. Adaptive AI governance recognizes that while some controls, goals and approaches may be common, their application is not the same from company to company.</p></div></li>
+<li><div><h3>Expand gradually</h3><p>With each success and new lesson learned, the team moves faster, takes ownership of the work that needs to be done, makes decisions aligned with the organization, and increasingly moves work forward with the appropriate level of insight.</p></div></li>
+<li><div><h3>Optimize then automate</h3><p>Automation comes naturally once we&rsquo;ve proven how the work gets done, built best practices and gained confidence in our decisions. Automating processes, implementing AI and getting the right work to the right people speeds the work and lets the team experience governance as an enabler.</p></div></li>
 </ol>
 </div></section>
 <section class="band"><div class="wrap">
 <div class="grid two">
 <div class="card accent">{icon("shield")}<h3>Governance as enabler</h3><p>Good governance is how teams get to say yes to AI with confidence. Lightweight, proportionate controls let adoption move faster, because people know where the lines are.</p></div>
-<div class="card design">{icon("pen")}<h3>Design as a capability</h3><p>A human-centered design background shows up in the details: disclosures users understand, workflows people follow, and controls that fit how work is done.</p></div>
+<div class="card design">{icon("people")}<h3>Design to support adoption</h3><p>Human-centered design supports adoption by helping everyone understand what is expected of them: disclosures that are readable, workflows that are intuitive and controls that are appropriate to the context.</p></div>
 </div>
-<p style="margin-top:28px">For fractional AI governance and focused engagements, see <a href="{FLOWHAUS}">Flowhaus.ai</a>.</p>
+<p style="margin-top:28px">For fractional AI governance and focused engagements, see <a href="{FLOWHAUS}" target="_blank" rel="noopener">Flowhaus.ai</a>.</p>
 <div class="actions"><a class="btn" href="{CALENDLY}">Book a discovery call</a></div>
 </div></section>"""
-page("/approach/", "Approach | John Molendyk", "Optimize before automate: a pilot-first, right-sized approach to AI governance and delivery.", approach, "/approach/")
+page("/approach/", "Approach | John Molendyk", "Optimize then automate: a pilot-first, adaptive approach to AI governance and delivery.", approach, "/approach/")
 
 # ---------------------------------------------------------------- about
 about = f"""<section class="hero" style="padding-bottom:24px"><div class="wrap">
@@ -440,7 +443,7 @@ about = f"""<section class="hero" style="padding-bottom:24px"><div class="wrap">
 <h1>Governance by someone who has built and run the systems</h1>
 </div></section>
 <section style="padding-top:24px"><div class="wrap"><div class="prose">
-<p>I'm an independent AI governance consultant and the founder of <a href="{FLOWHAUS}">Flowhaus.ai</a>. For more than twenty years I have moved loosely defined business problems from discovery to controlled deployment and sustainable operations, working as a developer, business analyst, project manager, product owner and researcher in financial services, healthcare and technology.</p>
+<p>I'm an independent AI governance consultant and the founder of <a href="{FLOWHAUS}" target="_blank" rel="noopener">Flowhaus.ai</a>. For more than twenty years I have moved loosely defined business problems from discovery to controlled deployment and sustainable operations, working as a developer, business analyst, project manager, product owner and researcher in financial services, healthcare and technology.</p>
 <p>That history is why I approach AI governance as an operating problem: audits, vendors, migrations, regulatory responses and rules-based decision systems all taught me what makes controls stick. Most recently I was a Senior UX Researcher at Meta, partnering with Privacy, Legal and Compliance on AI and voice features.</p>
 
 <h2>Credentials</h2>
@@ -451,7 +454,7 @@ about = f"""<section class="hero" style="padding-bottom:24px"><div class="wrap">
 <li>Six Sigma Black Belt</li>
 <li>Certified ScrumMaster (CSM) and Certified Scrum Product Owner (CSPO)</li>
 <li>M.S., Human-Computer Interaction &amp; Design, University of California, Irvine</li>
-<li>B.A., Organizational Leadership</li>
+<li>B.A., Organizational Leadership, Chapman University, Orange, CA</li>
 </ul>
 
 <h2>Experience</h2>
@@ -461,12 +464,14 @@ about = f"""<section class="hero" style="padding-bottom:24px"><div class="wrap">
 <li><strong>Union Bank</strong>, Senior Consultant, Document Governance (2017&ndash;2018)</li>
 <li><strong>Alliance Healthcare Services</strong>, Technical Product Owner (2015&ndash;2017)</li>
 <li><strong>Plaza Home Mortgage</strong>, Program Manager / LOS Product Owner (2012&ndash;2015)</li>
+<li><strong>B. Braun Medical</strong>, Senior Consultant, Safety Compliance (2011&ndash;2012)</li>
 <li><strong>Wells Fargo / Wachovia</strong>, Senior Consultant / Product Owner (2010&ndash;2011)</li>
-<li>Earlier: New Century Mortgage, H&amp;R Block, Lender Processing Services and others across mortgage and healthcare</li>
+<li>Earlier: New Century Mortgage, H&amp;R Block and Lender Processing Services</li>
 </ul>
 
-<h2>Hands-on skills</h2>
-<p>Python, SQL, JavaScript, HTML/CSS and APIs; research and design methods; data analysis and visualization; vendor management and roadmapping.</p>
+<h2>Technical fluency</h2>
+<p>I can read and understand code, query data and work with APIs, so I can talk with engineering teams on their terms and see where controls belong. I use that to ask sharper questions and write controls engineers can implement, not to build your systems.</p>
+<p class="note">Familiar with Python, SQL, JavaScript, HTML/CSS and APIs, plus research and design methods, data analysis and vendor management.</p>
 
 <div class="actions"><a class="btn" href="{CALENDLY}">Book a discovery call</a><a class="btn ghost" href="{LINKEDIN}">LinkedIn</a></div>
 </div></div></section>"""
@@ -489,7 +494,7 @@ contact = f"""<section class="hero" style="padding-bottom:24px"><div class="wrap
 <label>Message<textarea name="message" required></textarea></label>
 <button class="btn" type="submit">Send message</button>
 </form>
-<p class="note" style="margin-top:24px">Looking for organization-level AI governance? Start at <a href="{FLOWHAUS}">Flowhaus.ai</a>.</p>
+<p class="note" style="margin-top:24px">Looking for organization-level AI governance? Start at <a href="{FLOWHAUS}" target="_blank" rel="noopener">Flowhaus.ai</a>.</p>
 </div></section>"""
 page("/contact/", "Contact | John Molendyk", "Book a discovery call or send a message.", contact, "/contact/")
 
@@ -539,7 +544,7 @@ page("/lab/", "Lab | John Molendyk", "Apps built with AI and working artifacts f
 <p class="lede">Apps built with AI and working artifacts from AI governance. These are personal projects, separate from client work and from my articles.</p>
 </div></section>
 <section style="padding-top:24px"><div class="wrap"><div class="grid two">{lab_cards}</div>
-<p class="note" style="margin-top:28px">For organization-level engagements and resources, see <a href="{FLOWHAUS}">Flowhaus.ai</a>.</p></div></section>""",
+<p class="note" style="margin-top:28px">For organization-level engagements and resources, see <a href="{FLOWHAUS}" target="_blank" rel="noopener">Flowhaus.ai</a>.</p></div></section>""",
      "/lab/")
 
 for e in LAB:
