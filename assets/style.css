@@ -244,3 +244,9 @@ textarea { min-height: 150px; resize: vertical; }
 .proof-industries { gap: 6px 0; margin-top: 20px; font-size: 15px; color: var(--muted, #5b6270); }
 .proof-industries li + li::before { content: "\00b7"; margin: 0 12px; color: var(--line); font-weight: 700; }
 @media (max-width: 620px) { .proof-logos { gap: 16px 28px; } .proof-industries { font-size: 14px; } }
+
+/* logo slot on work cards */
+.card-logo { height: 40px; display: flex; align-items: center; margin-bottom: 4px; }
+.card-logo img { max-height: 28px; max-width: 150px; width: auto; opacity: .85; filter: grayscale(1); transition: opacity .15s, filter .15s; }
+.card-logo img.logo-wells-fargo { max-height: 40px; }
+.work-card:hover .card-logo img { opacity: 1; filter: none; }

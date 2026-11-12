@@ -288,12 +288,22 @@ def tags_html(tags):
     return '<div class="tags">' + "".join('<span class="%s">%s</span>' % (k, t) for t, k in tags) + "</div>"
 
 
+CARD_CTX = {
+    "ai-voice-privacy-research": "AI and voice features",
+    "wealth-migration-continuity": "Wealth management",
+    "healthcare-feedback-platform": "Healthcare services",
+    "mortgage-document-governance": "Mortgage banking",
+}
+
+
 def work_card(c):
+    lg, lg_alt = c["logo"]
     return f"""<a class="card work-card" href="/work/{c['slug']}/">
+<div class="card-logo"><img class="logo-{lg}" src="/assets/logos/{lg}.png" alt="{lg_alt} logo"></div>
 {tags_html(c['tags'])}
 <h3>{c['short']}</h3>
 <div class="stat">{c['card_stat']}<small>{c['card_stat_note']}</small></div>
-<p class="muted">{c['client']}, {c['years']}</p>
+<p class="muted">{CARD_CTX[c['slug']]}</p>
 <span class="more">Read the case &rarr;</span>
 </a>"""
 
