@@ -279,9 +279,9 @@ CASES = [
         "design": "This is the project where design research was the governance mechanism: the disclosure was the control, and testing it with users is how we knew it worked.",
     },
 ]
-_order = ["wealth-migration-continuity", "healthcare-feedback-platform", "mortgage-document-governance", "ai-voice-privacy-research"]
-CASES.sort(key=lambda c: _order.index(c["slug"]))  # chronological (oldest first): Work page and prev/next
-HOME_CASES = sorted(CASES, key=lambda c: 0 if c["slug"] == "ai-voice-privacy-research" else 1)  # Meta first, then chronological
+_order = ["ai-voice-privacy-research", "wealth-migration-continuity", "healthcare-feedback-platform", "mortgage-document-governance"]
+CASES.sort(key=lambda c: _order.index(c["slug"]))  # Meta first, then chronological: Work page, home and prev/next
+HOME_CASES = list(CASES)
 for i, c in enumerate(CASES):
     c["prev"] = CASES[i - 1] if i > 0 else None
     c["next"] = CASES[i + 1] if i < len(CASES) - 1 else None
@@ -533,7 +533,7 @@ LAB = [
         "what": "[Placeholder] Describe the app: a collection of AI governance articles presented under the Insights name. What can a visitor do with it?",
         "why": "[Placeholder] Why you built it and the gap it fills.",
         "how": "[Placeholder] How it was built: tools, the role AI played, what you decided versus what the AI drafted.",
-        "links": "Coming soon.",
+        "links": "Personal project. Demonstration and additional details available upon request.",
         "lede": "An AI-powered news and research platform designed to make it easier to follow developments in AI governance, understand emerging trends and turn information into informed perspectives.",
         "stat": "2,500+ articles from more than 290 sources",
         "lead_img": ("insight-briefing", "Insight Daily Briefing: top stories, collection routes and source counts"),
@@ -571,7 +571,7 @@ LAB = [
         "what": "[Placeholder] Describe the AI governance workspace: what it tracks and what a user can do in it.",
         "why": "[Placeholder] Why you built it, and how it connects to the governance work you do for organizations.",
         "how": "[Placeholder] How it was built: tools, the role AI played, what you decided versus what the AI drafted, and how it handles data.",
-        "links": "[Placeholder] Live demo and source links, or “Coming soon.”",
+        "links": "Personal project. Demonstration and additional details available upon request.",
     },
 ]
 
