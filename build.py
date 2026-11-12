@@ -421,16 +421,16 @@ approach = f"""<section class="hero" style="padding-bottom:24px"><div class="wra
 </div></section>
 <section style="padding-top:24px"><div class="wrap">
 <ol class="steps">
-<li><div><h3>Pilot one system or issue</h3><p>Choose one system or issue, follow the process and determine what works and what doesn&rsquo;t. Fix it, then build from that new knowledge and experience to increase the confidence of the team and allow them to move faster.</p></div></li>
-<li><div><h3>Adapt the governance</h3><p>Organizations are unique and require governance that matches how they operate and what is important to them. Adaptive AI governance recognizes that while some controls, goals and approaches may be common, their application is not the same from company to company.</p></div></li>
-<li><div><h3>Expand gradually</h3><p>With each success and new lesson learned, the team moves faster, takes ownership of the work that needs to be done, makes decisions aligned with the organization, and increasingly moves work forward with the appropriate level of insight.</p></div></li>
-<li><div><h3>Optimize then automate</h3><p>Automation comes naturally once we&rsquo;ve proven how the work gets done, built best practices and gained confidence in our decisions. Automating processes, implementing AI and getting the right work to the right people speeds the work and lets the team experience governance as an enabler.</p></div></li>
+<li><div><h3>Pilot one system or issue</h3><p>Start with one system or one issue. Run it through the process, see what works and what doesn&rsquo;t, and fix it. What the team learns becomes the foundation for everything after, and their confidence is what lets them move faster.</p></div></li>
+<li><div><h3>Adapt the governance</h3><p>Every organization operates differently and values different things, so governance has to fit. Many controls and goals are common across companies, but how they are applied is not. Adaptive governance starts from how your organization actually works.</p></div></li>
+<li><div><h3>Expand gradually</h3><p>Each success and each lesson learned builds momentum. The team takes ownership of the work, makes decisions that fit the organization, and moves things forward with the right level of insight.</p></div></li>
+<li><div><h3>Optimize then automate</h3><p>Once we have proven how the work gets done, built best practices and gained confidence in our decisions, automation follows naturally. Automating processes, applying AI and routing the right work to the right people speeds everything up, and the team experiences governance as an enabler.</p></div></li>
 </ol>
 </div></section>
 <section class="band"><div class="wrap">
 <div class="grid two">
-<div class="card accent">{icon("shield")}<h3>Governance as enabler</h3><p>Good governance is how teams get to say yes to AI with confidence. Lightweight, proportionate controls let adoption move faster, because people know where the lines are.</p></div>
-<div class="card design">{icon("people")}<h3>Design to support adoption</h3><p>Human-centered design supports adoption by helping everyone understand what is expected of them: disclosures that are readable, workflows that are intuitive and controls that are appropriate to the context.</p></div>
+<div class="card accent">{icon("shield")}<h3>Governance as enabler</h3><p>Good governance is how teams say yes to AI with confidence. Lightweight, proportionate controls speed adoption because people know where the lines are.</p></div>
+<div class="card design">{icon("people")}<h3>Design to support adoption</h3><p>Human-centered design drives adoption by making expectations clear to everyone: disclosures people can read, workflows that feel intuitive and controls that fit the context.</p></div>
 </div>
 <p style="margin-top:28px">For fractional AI governance and focused engagements, see <a href="{FLOWHAUS}" target="_blank" rel="noopener">Flowhaus.ai</a>.</p>
 <div class="actions"><a class="btn" href="{CALENDLY}">Book a discovery call</a></div>
