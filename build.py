@@ -589,11 +589,18 @@ LAB = [
         "slug": "personal-kanban",
         "name": "Personal Kanban Board",
         "tags": ["Personal build", "Productivity"],
-        "summary": "A personal kanban board I built with AI to organize and track my own work.",
-        "what": "[Placeholder] Describe the board: how work moves through it and what a user can do in it.",
-        "why": "[Placeholder] Why you built it and the gap it fills in how you manage your own work.",
-        "how": "[Placeholder] How it was built: tools, the role AI played, what you decided versus what the AI drafted.",
+        "summary": "A personal planning tool I designed and built with AI to connect everyday tasks to what\u2019s important.",
+        "lede": "A personal planning tool I designed and built with AI to connect everyday tasks to what\u2019s important.",
         "links": "Personal project. Demonstration and additional details available upon request.",
+        "body": """<h2>What it is</h2>
+<p>The board brings Personal, Professional and Home tasks into one view, with work moving through Backlog, Ready, In progress and Done. A separate Today view lets me choose a manageable set of tasks from any area without losing their place on the full board.</p>
+<p>Each area has an editable values statement. Tasks can include notes, a definition of done and one small next step. A &ldquo;Needs clarity&rdquo; flag marks work that needs more thought or exploration before I know how to approach it. The board is available on my Mac and iPad, with tasks saved online.</p>
+<h2>Why I built it</h2>
+<p>I wanted a way to plan my day that recognized the relationship between my own needs, my work and my home. Personal comes first deliberately: taking care of myself helps me show up in the other areas of my life.</p>
+<p>I also wanted to make unfamiliar work easier to approach. Naming what I don&rsquo;t yet understand, describing what done looks like and finding one small next step give me a practical way to move forward. The values statements and rotating quotes keep those daily choices connected to longer-term intentions.</p>
+<h2>How it was built</h2>
+<p>I directed the design and development through an iterative collaboration with ChatGPT and Codex. I defined the workflow, priorities, interactions and visual direction, and AI drafted and revised the implementation. Using the board between iterations helped me decide what to improve next.</p>
+<p>The application uses React and TypeScript, with a Cloudflare Worker and D1 database for persistent storage, hosted through ChatGPT Sites. It includes responsive layouts, Calm and Energy themes, editable values and a personal quote collection. The current Calm palette draws from a watercolor my sister painted, with a frog and reed adapted into a floating illustration.</p>""",
     },
 ]
 
@@ -624,6 +631,8 @@ page("/lab/", "Lab | John Molendyk", "Apps built with AI and governed by design:
 for e in LAB:
     if e.get("body"):
         lab_stat = '<p class="lab-stat">%s</p>' % e["stat"] if e.get("stat") else ""
+        li = e.get("lead_img")
+        lead_html = ('<section style="padding-top:8px"><div class="wrap">\n<figure class="shot lead"><img src="/assets/lab/%s.jpg" alt="%s"><figcaption>%s</figcaption></figure>\n</div></section>' % li) if li else ""
         page("/lab/%s/" % e["slug"], "%s | Lab | John Molendyk" % e["name"], e["lede"],
              f"""<section class="case-head"><div class="wrap">
 <p class="eyebrow">Lab</p>
@@ -632,9 +641,7 @@ for e in LAB:
 {lab_tags(e['tags'])}
 {lab_stat}
 </div></section>
-<section style="padding-top:8px"><div class="wrap">
-<figure class="shot lead"><img src="/assets/lab/{e['lead_img'][0]}.jpg" alt="{e['lead_img'][1]}"><figcaption>{e['lead_img'][2]}</figcaption></figure>
-</div></section>
+{lead_html}
 <section style="padding-top:24px"><div class="wrap"><div class="prose">
 {e['body']}
 <h2>Links</h2><p>{e['links']}</p>
