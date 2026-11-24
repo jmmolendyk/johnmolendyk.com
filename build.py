@@ -445,10 +445,10 @@ approach = f"""<section class="hero" style="padding-bottom:24px"><div class="wra
 </div></section>
 <section style="padding-top:24px"><div class="wrap">
 <ol class="steps">
-<li><div><h3>Pilot one system or issue</h3><p>Start with one system or one issue. Run it through the process, see what works and what doesn&rsquo;t, and fix it. What the team learns becomes the foundation for everything after, and their confidence is what lets them move faster.</p></div></li>
-<li><div><h3>Adapt the governance</h3><p>Every organization operates differently and values different things, so governance has to fit. Many controls and goals are common across companies, but how they are applied is not. Adaptive governance starts from how your organization actually works.</p></div></li>
-<li><div><h3>Expand gradually</h3><p>Each success and each lesson learned builds momentum. The team takes ownership of the work, makes decisions that fit the organization, and moves things forward with the right level of insight.</p></div></li>
-<li><div><h3>Optimize then automate</h3><p>Once we have proven how the work gets done, built best practices and gained confidence in our decisions, automation follows naturally. Automating processes, applying AI and routing the right work to the right people speeds everything up, and the team experiences governance as an enabler.</p></div></li>
+<li><div><h3>Define the problem and the measure</h3><p>Start by identifying the problem or opportunity. Understand what it is, what solving it means for the business, and how we&rsquo;ll measure success once it&rsquo;s in place.</p></div></li>
+<li><div><h3>Optimize, then automate</h3><p>Fix the process first, then build the solution around the new needs and the technology available, including AI. Responsibility is built in from the start.</p></div></li>
+<li><div><h3>Measure and improve</h3><p>Track the new process against the measures we set at the start, and make iterative changes to keep improving its performance.</p></div></li>
+<li><div><h3>Hand over ownership</h3><p>Transfer the solution to its owner with the tools needed to maintain ownership, including documentation, training and a clear view of how it&rsquo;s performing.</p></div></li>
 </ol>
 </div></section>
 <section class="band"><div class="wrap">
