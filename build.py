@@ -534,7 +534,7 @@ LAB = [
         "how": "[Placeholder] How it was built: tools, the role AI played, what you decided versus what the AI drafted.",
         "links": "Personal project. Demonstration and additional details available upon request.",
         "lede": "An AI-powered news and research platform designed to make it easier to follow developments in AI governance, understand emerging trends and turn information into informed perspectives.",
-        "stat": "2,500+ articles from more than 290 sources",
+        "stat": "2,500+ articles from 200+ active sources",
         "lead_img": ("insight-briefing", "Insight Daily Briefing: top stories, collection routes and source counts"),
         "body": """<h2>What it is</h2>
 <p>Insight collects articles and organizes them into common-sense themes. It highlights specific sources and brings forward the articles most relevant to what I&rsquo;m working on now.</p>
@@ -572,6 +572,16 @@ LAB = [
         "how": "[Placeholder] How it was built: tools, the role AI played, what you decided versus what the AI drafted, and how it handles data.",
         "links": "Personal project. Demonstration and additional details available upon request.",
     },
+    {
+        "slug": "personal-kanban",
+        "name": "Personal Kanban Board",
+        "tags": ["Personal build", "Productivity"],
+        "summary": "A personal kanban board I built with AI to organize and track my own work.",
+        "what": "[Placeholder] Describe the board: how work moves through it and what a user can do in it.",
+        "why": "[Placeholder] Why you built it and the gap it fills in how you manage your own work.",
+        "how": "[Placeholder] How it was built: tools, the role AI played, what you decided versus what the AI drafted.",
+        "links": "Personal project. Demonstration and additional details available upon request.",
+    },
 ]
 
 
@@ -592,7 +602,7 @@ page("/lab/", "Lab | John Molendyk", "Apps built with AI and governed by design:
      f"""<section class="hero" style="padding-bottom:24px"><div class="wrap">
 <p class="eyebrow">Lab</p>
 <h1>Things I build and make</h1>
-<p class="lede">Apps I build with AI, governed by design. These are personal projects, separate from client work and from my articles.</p>
+<p class="lede">Apps I&rsquo;ve built with AI: support tools, governance tools and personal projects.</p>
 </div></section>
 <section style="padding-top:24px"><div class="wrap"><div class="grid two">{lab_cards}</div>
 <p class="note" style="margin-top:28px">For organization-level engagements and resources, see <a href="{FLOWHAUS}" target="_blank" rel="noopener">Flowhaus.ai</a>.</p></div></section>""",
