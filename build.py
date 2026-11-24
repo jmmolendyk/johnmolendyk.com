@@ -564,20 +564,20 @@ LAB = [
     },
     {
         "slug": "ai-register",
-        "name": "AI Register",
+        "name": "Agent Register",
         "tags": ["Personal build", "AI governance", "Workspace"],
         "summary": "An AI governance prototype that helps teams describe their agents, establish ownership and give reviewers a clearer picture of how AI is being used across an organization.",
         "lede": "An AI governance prototype that helps teams describe their agents, establish ownership and give reviewers a clearer picture of how AI is being used across an organization.",
         "links": "Personal project under active development. A populated demonstration and walkthrough are available upon request. Feedback from governance professionals, business owners and technical teams is welcome.",
-        "lead_img": ("ai-register-overview", "AI Register governance view: agents organized by department with review status counts", "Organizational oversight: explore agent ownership by department and team, then drill into individual agents and their review status."),
+        "lead_img": ("ai-register-overview", "Agent Register governance view: agents organized by department with review status counts", "Organizational oversight: explore agent ownership by department and team, then drill into individual agents and their review status."),
         "body": """<h2>What it is</h2>
-<p>AI Register brings business context and technical implementation into a shared governance workflow. Submitters begin with a simple user story: who will use the agent, what it will help them accomplish and why that outcome matters.</p>
+<p>Agent Register brings business context and technical implementation into a shared governance workflow. Submitters begin with a simple user story: who will use the agent, what it will help them accomplish and why that outcome matters.</p>
 <p>The intake then explores the platform, data sources, actions and human oversight involved. Questions adapt to how the agent is being built, allowing business teams to explain its purpose and technical owners to document its implementation.</p>
 <p>The governance view organizes agents by department and business owner, with drill-downs into teams, submission statuses and individual records. Reviewers can identify missing information, request changes and record decisions. Indicators such as external data sharing, write access and human approval requirements help focus attention without assigning an automatic risk rating.</p>
-<figure class="shot"><img src="/assets/lab/ai-register-drilldown.jpg" alt="AI Register Finance drill-down showing subgroups, agents and submission statuses" loading="lazy"><figcaption>Drill-down: a department&rsquo;s subgroups, agents and submission statuses.</figcaption></figure>
-<figure class="shot"><img src="/assets/lab/ai-register-review.jpg" alt="AI Register review screen with platform and ownership details, review indicators and approval controls" loading="lazy"><figcaption>Informed review: examine data access, permitted actions and human approval requirements alongside technical details and governance decisions.</figcaption></figure>
+<figure class="shot"><img src="/assets/lab/ai-register-drilldown.jpg" alt="Agent Register Finance drill-down showing subgroups, agents and submission statuses" loading="lazy"><figcaption>Drill-down: a department&rsquo;s subgroups, agents and submission statuses.</figcaption></figure>
+<figure class="shot"><img src="/assets/lab/ai-register-review.jpg" alt="Agent Register review screen with platform and ownership details, review indicators and approval controls" loading="lazy"><figcaption>Informed review: examine data access, permitted actions and human approval requirements alongside technical details and governance decisions.</figcaption></figure>
 <h2>Why I built it</h2>
-<p>I built AI Register to explore how governance can become part of the way teams create and deploy AI.</p>
+<p>I built Agent Register to explore how governance can become part of the way teams create and deploy AI.</p>
 <p>A useful review starts with a shared understanding of purpose, ownership, data and authority. Business users should be able to explain what they need in familiar language. Technical teams should be able to supply implementation details without asking the business owner to guess.</p>
 <p>This project turns that idea into a working prototype. It gives me a practical way to test intake questions, review workflows and organizational views, and to explore how governance can provide useful guidance as AI adoption grows.</p>
 <h2>How it was built</h2>
