@@ -155,18 +155,17 @@ CASES = [
         "tags": [("Governance", ""), ("Process", ""), ("Human-Centered", "d")],
         "card_stat": "5,000+ → ~500",
         "card_stat_note": "records rationalized into controlled documents",
-        "summary": "Audit findings exposed scattered, unversioned mortgage documents. I led the work to turn 5,000+ records into a controlled, role-based library the bank could defend to auditors.",
+        "summary": "Alongside a loan origination system (LOS) document compliance API implementation, I led the work to identify a controlled library of mortgage documentation. I implemented an IT-approved no-code solution with role-based access and basic mortgage scenarios to support audit functions. The application supported version control and let Operations view documents within their scope.",
         "stats": [
             ("5,000+", "records audited and rationalized"),
-            ("~90%", "fewer state-disclosure documents"),
             ("100%", "of in-scope documents validated and versioned"),
             ("<5 months", "against an 18-month IT estimate"),
         ],
         "sections": [
             ("The situation",
-             "<p>Multi-state audit findings pointed at a basic problem: nobody could say which mortgage documents were authoritative. Documents lived in inboxes, personal drives and desktops. There was no version control, no way to verify that a document was current or matched a state and loan type, and finding the right one depended on long-tenured employees.</p>"),
+             "<p>Audit findings highlighted an opportunity to bring more consistency to how mortgage documents were managed. Documents were stored across inboxes, personal drives and shared locations, which made it harder to confirm which version was current for a given state and loan type, and finding the right one often relied on experienced staff.</p>"),
             ("My role",
-             "<p>I investigated the findings, led the cross-functional work with Operations, Legal and Compliance, and owned research, design and project delivery. I built the solution to enterprise IT standards rather than waiting in the IT queue, and handed administration and development capability to internal teams so the bank could own it afterward.</p>"),
+             "<p>I investigated the findings, led the cross-functional work with Operations, Legal and Compliance, and owned research, design and project delivery. I built the solution to enterprise IT standards and handed administration and development capability to internal teams so the bank could own it afterward.</p>"),
             ("What I did",
              "<ul><li><strong>Audited the population.</strong> Reviewed 5,000+ records to find the real set of controlled documents, validating each finding with compliance, operations and administration.</li>"
              "<li><strong>Designed the control model.</strong> Role-based access by job and operational need; metadata for loan type, state applicability and version; a standard versioning schema with archiving so only current documents stay active.</li>"
@@ -181,7 +180,7 @@ CASES = [
         "slug": "wealth-migration-continuity",
         "logo": ("wells-fargo", "Wells Fargo"),
         "short": "Migration weekends with zero losses",
-        "title": "Keeping wealth-management accounts transacting through three migration weekends",
+        "title": "Maintaining wealth-management account balances offline through three migration weekends",
         "client": "Wells Fargo / Wachovia, wealth management",
         "years": "2010–2011",
         "role": "Senior Consultant / Product Owner",
@@ -201,9 +200,9 @@ CASES = [
             ("My role",
              "<p>I designed and led implementation of the transactional continuity solution and drove migration readiness, operational controls and execution across Wealth Management, Risk, Fraud, Compliance, IT, Data Administration and Operations, including controlled decommissioning after the conversion succeeded.</p>"),
             ("What I did",
-             "<ul><li><strong>Set four goals up front:</strong> accurate real-time balances to prevent overdrafts, minimal disruption for personal bankers, fraud prevention, and compliance with privacy, security and regulatory standards.</li>"
+             "<ul><li><strong>Set goals up front:</strong> accurate real-time balances to prevent overdrafts, minimal disruption for personal bankers, fraud prevention, and compliance with privacy, security and regulatory standards.</li>"
              "<li><strong>Discovered the real process.</strong> Interviews and surveys with personal bankers (who represented client needs), a journey map of migration pain points, current-state flows of compliance steps and business rules for wires, withdrawals and deposits, and analysis of past transactions and escalations.</li>"
-             "<li><strong>Built an internal application</strong> for withdrawals and deposits against live balances, impacted-account lookup, transaction review with the ability to pause updates, and weekend shift sign-ups so every shift was staffed with the right roles.</li></ul>"),
+             "<li><strong>Led design and development of an internal application</strong> for withdrawals and deposits against live balances, impacted-account lookup, and transaction review with the ability to pause updates.</li></ul>"),
             ("Outcome",
              "<p>The three weekends delivered no financial losses and no customer-reported disruption. Accounts were balanced with wire transactions at the end of every weekend, and surveys and interviews after the first weekend found the application worked well, with no findings that required changes. Personal bankers rated the experience 9.5.</p>"),
         ],
@@ -212,15 +211,15 @@ CASES = [
     {
         "slug": "healthcare-feedback-platform",
         "logo": ("alliance-healthcare", "Alliance Healthcare Services"),
-        "short": "Healthcare feedback and request platform",
-        "title": "Replacing paper surveys with a scalable feedback and case-management platform",
+        "short": "Digitizing customer feedback",
+        "title": "Digitizing the customer experience: from mailed paper surveys to a scalable feedback platform",
         "client": "Alliance Healthcare Services",
         "years": "2015–2017",
         "role": "Technical Product Owner / Lead Product Designer",
         "tags": [("Process", ""), ("Delivery", ""), ("Human-Centered", "d")],
         "card_stat": "1,000+",
-        "card_stat_note": "provider sites moved off mailed paper surveys",
-        "summary": "A 53-page mailed survey, spreadsheets and email were hiding the customer requests that mattered. I redesigned the process and delivered a digital platform across Qualtrics and Salesforce.",
+        "card_stat_note": "provider sites digitized for near real-time feedback",
+        "summary": "Customer feedback depended on a 53-question paper survey mailed after the appointment, and the requests inside it moved through spreadsheets and email. We digitized it: a customer experience platform built on the Qualtrics API and Salesforce data, giving teams near real-time access to feedback.",
         "stats": [
             ("1,000+", "provider sites with branded digital surveys"),
             ("64%", "less time to log and manage each request"),
@@ -229,22 +228,21 @@ CASES = [
         ],
         "sections": [
             ("The situation",
-             "<p>Paper surveys arrived 30+ days after service, and research found that over 70% of contact requests went unaddressed, lost to illegibility or timing. Teams tracked requests across email, spreadsheets and phone calls, staff spent up to 18 minutes logging a single request across several systems, and there was no scalable way to manage branding or devices for 1,000+ sites. The inconsistency also created compliance risk.</p>"),
+             "<p>A 53-question paper survey was mailed to participants after their appointment and arrived up to two weeks after service. Research found that over 70% of contact requests went unaddressed, lost to illegibility or timing. Teams tracked requests across email, spreadsheets and phone calls, staff spent up to 18 minutes logging a single request across several systems, and there was no scalable way to manage branding or devices for 1,000+ sites. The inconsistency also created compliance risk.</p>"),
             ("My role",
-             "<p>As interim Product Owner across 15+ applications, I led the digital transformation, working with engineering, sales and operations through a phased approach. I also designed incident reporting and compliance case management for Compliance and Legal.</p>"),
+             "<p>As interim Product Owner across 15+ applications, I led the digital transformation, working with engineering, sales and operations through a phased approach.</p>"),
             ("What I did",
              "<ul><li><strong>Mapped before building.</strong> Interviews and shadowing across sales, customer experience and regional operations, then a sitemap of the full survey lifecycle that defined roles, data sources and system responsibilities.</li>"
+             "<li><strong>Digitized the survey end to end.</strong> Built the platform with an API integration to Qualtrics and Salesforce data for near real-time access to customer feedback, with hardware and training delivered to client sites and technical administration of the Qualtrics survey platform.</li>"
              "<li><strong>Piloted first.</strong> A desktop pilot for program and operations admins proved the enrollment and request flows before the tablet and phone version for field teams.</li>"
-             "<li><strong>Standardized the workflow.</strong> Device replacement tickets with history, contact requests that minimize free text, and API-driven enrollment of clients and sites with branding and metadata.</li>"
-             "<li><strong>Added assistive features</strong> for request identification, voice input and text rephrasing to cut documentation time in the field.</li></ul>"),
+             "<li><strong>Standardized the workflow.</strong> A platform for customer communications and hardware replacement requests, with device replacement tickets and history, contact requests that minimize free text, and API-driven enrollment of clients and sites with branding and metadata. Multiple teams moved off spreadsheets and email.</li></ul>"),
             ("Outcome",
-             "<p>Time to document and manage a request dropped 64%, saving 13 minutes each, and every contact request now reached operations within 24 hours of service. Sites got self-service branded surveys, and survey data was shared across CX, operations, sales and compliance. Compliance and Legal also saw their incident-reporting cycle time cut by more than half.</p>"),
+             "<p>Time to document and manage a request dropped 64%, saving 13 minutes each, and every contact request now reached operations within 24 hours of service. Sites got self-service branded surveys, and survey data was shared across CX, operations, sales and compliance.</p>"),
         ],
         "quotes": {
             0: ("John\u2019s influence, creativity and resourcefulness regularly made the difference.", "Senior Manager, Project Development (ex-United Health Group)"),
             3: ("John has a great attention to detail and a unique ability to make complex topics easy to understand.", "Senior Manager, Project Development (ex-United Health Group)"),
         },
-        "design": "Research, wireframes and pilot iterations drove adoption. The people closing requests were field teams on tablets and phones, so the process only worked once it fit their hands and their time.",
     },
     {
         "slug": "ai-voice-privacy-research",
@@ -256,16 +254,15 @@ CASES = [
         "role": "Senior UX Researcher, AI / Voice",
         "tags": [("Governance", ""), ("Human-Centered", "d")],
         "card_stat": "30%",
-        "card_stat_note": "more new voice users from one research-driven UI change",
-        "summary": "Speech-to-text and AI features raise privacy and trust questions users notice immediately. I led research that shaped disclosure, adoption and roadmap decisions with Product, Privacy, Legal and Compliance.",
+        "card_stat_note": "new voice users estimated (based on internal testing)",
+        "summary": "Adopting voice-driven messaging meant a spectrum of AI features, privacy disclosures and cross-platform applications. I led research that shaped adoption and roadmap decisions across product, privacy, legal and compliance.",
         "stats": [
-            ("12 of 21", "high-priority H2 2022 initiatives informed by the research"),
-            ("30%", "increase in new voice users from a single UI finding"),
-            ("1/3", "of findings behind high-priority items were new to the team"),
+            ("30%", "new voice users estimated (based on internal testing)"),
+            ("1/3", "of high-priority roadmap driven by novel research findings"),
         ],
         "sections": [
             ("The situation",
-             "<p>Voice messaging in VR depended on speech-to-text and AI features, but the team had inconsistent design patterns, limited foundational research, and open questions about how first-time users perceive privacy and disclaimer notices. Adoption and retention of voice users were the commercial question; regulatory intent was the constraint.</p>"),
+             "<p>Voice messaging in VR for Facebook Messenger depended on speech-to-text and AI features. As part of the foundational research team, we focused on open questions around adoption and retention of voice users. The work improved the overall user experience by focusing on feature implementation and appropriate privacy messaging in disclaimer notices.</p>"),
             ("My role",
              "<p>I led the biannual research strategy across voice, speech-to-text, AI, AR/VR and smart communication experiences, partnering with product managers, designers, engineers, data scientists, and the Privacy, Legal and Compliance teams. I also coordinated governance for studies involving AI, voice and sensitive user data.</p>"),
             ("What I did",
@@ -274,9 +271,8 @@ CASES = [
              "<li><strong>Paired behavior with qualitative data</strong> to establish behavior-based benchmarks.</li>"
              "<li><strong>Made the work reusable.</strong> Contributed studies to research libraries; the findings became a reference for voice-based design in AR and wearables.</li></ul>"),
             ("Outcome",
-             "<p>Research informed 12 of 21 high-priority initiatives for the second half of 2022. A single UI finding the team had not previously identified increased new voice users by 30%, and the disclosure redesign showed that privacy transparency and adoption can move together.</p>"),
+             "<p>Research informed 12 of 21 high-priority initiatives for the second half of 2022. A single UI finding the team had not previously identified increased new voice usage by an estimated 30% in internal testing. The disclosure redesign showed that disclaimer language mattered more than originally thought and could be a driver of adoption. The studies became foundational for multiple voice-based design implementations.</p>"),
         ],
-        "design": "This is the project where design research was the governance mechanism: the disclosure was the control, and testing it with users is how we knew it worked.",
     },
 ]
 _order = ["ai-voice-privacy-research", "wealth-migration-continuity", "healthcare-feedback-platform", "mortgage-document-governance"]
@@ -325,6 +321,7 @@ for c in CASES:
     nav_next = '<a href="/work/%s/">%s &rarr;</a>' % (c["next"]["slug"], c["next"]["short"]) if c["next"] else '<a href="/work/">All work &rarr;</a>'
     lg, lg_alt = c["logo"]
     logo = '<img class="client-logo logo-%s" src="/assets/logos/%s.png" alt="%s logo">' % (lg, lg, lg_alt)
+    design_html = ('<div class="callout amber"><h3>Where design mattered</h3><p>%s</p></div>' % c["design"]) if c.get("design") else ""
     body = f"""<section class="case-head"><div class="wrap">
 <div class="case-top"><p class="eyebrow">Case study</p>{logo}</div>
 <h1>{c['title']}</h1>
@@ -335,7 +332,7 @@ for c in CASES:
 </div></section>
 <section style="padding-top:24px"><div class="wrap"><div class="prose">
 {secs}
-<div class="callout amber"><h3>Where design mattered</h3><p>{c['design']}</p></div>
+{design_html}
 <div class="case-nav">{nav_prev}{nav_next}</div>
 </div></div></section>"""
     page(
