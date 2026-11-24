@@ -343,6 +343,105 @@ for c in CASES:
         "/work/",
     )
 
+LAB = [
+    {
+        "slug": "insights",
+        "thumb": "thumb-insight",
+        "blurb": "AI governance research platform",
+        "name": "Insight",
+        "tags": ["Personal build", "AI governance", "Articles", "Knowledge center"],
+        "summary": "An AI-powered research platform that collects, organizes and synthesizes news and articles about AI governance, helping turn a rapidly changing information landscape into actionable insights.",
+        "what": "[Placeholder] Describe the app: a collection of AI governance articles presented under the Insights name. What can a visitor do with it?",
+        "why": "[Placeholder] Why you built it and the gap it fills.",
+        "how": "[Placeholder] How it was built: tools, the role AI played, what you decided versus what the AI drafted.",
+        "links": "Personal project. Demonstration and additional details available upon request.",
+        "lede": "An AI-powered news and research platform designed to make it easier to follow developments in AI governance, understand emerging trends and turn information into informed perspectives.",
+        "stat": "2,500+ articles from 200+ active sources",
+        "lead_img": ("insight-briefing", "Insight Daily Briefing: top stories, collection routes and source counts", "Daily Briefing"),
+        "body": """<h2>What it is</h2>
+<p>Insight collects articles and organizes them into common-sense themes. It highlights specific sources and brings forward the articles most relevant to what I&rsquo;m working on now.</p>
+<p>A daily briefing gives me a quick snapshot, where I can expand the categories I care about and collapse the rest.</p>
+<p>I can search the full library of collected articles and, from within any article, start developing ideas for my own writing while the tool surfaces other articles and sources worth considering.</p>
+<p>I can also manage my sources and create new categories for the article taxonomy.</p>
+<figure class="shot"><img src="/assets/lab/insight-library.jpg" alt="Insight Library: collected articles organized by governance category, with search and filters" loading="lazy"><figcaption>Library: every collected article, organized by governance category.</figcaption></figure>
+<figure class="shot"><img src="/assets/lab/insight-writing.jpg" alt="Insight Writing ideas: start from a perspective to test and build a research brief" loading="lazy"><figcaption>Writing ideas: start with a perspective to test and build a research brief from the evidence.</figcaption></figure>
+<h2>Why I built it</h2>
+<p>Staying current in a field as fast-moving as AI governance is nearly impossible, and the pace keeps increasing. New threats, technologies, solutions, regulations, standards and practices emerge constantly across multiple disciplines.</p>
+<p>I built Insight to keep me focused on information from core sources on a regular basis, while exposing me to new sources without inundating me.</p>
+<p>It goes beyond a list of bookmarks or a spreadsheet. AI parses newsletters and traverses my sources for me, so I get a consolidated perspective quickly and know there is one place where the material I care about most lives.</p>
+<p>I can add individual articles or sources, or drop in a newsletter and have the articles and new sources collected. I can also see how each source performs and decide whether it is meeting my needs or should be removed.</p>
+<h2>Approach</h2>
+<p>Insight was developed through an iterative, AI-assisted process. I defined the product requirements, information architecture, taxonomy, collection workflow and editorial experience, and used AI coding tools to help implement and refine the application.</p>
+<p>The design emphasizes source quality, relevance and traceability. Rather than treating AI-generated summaries as authoritative, the platform supports research and judgment while preserving access to the original sources.</p>
+<p>The project continues to evolve as I explore more effective ways to use AI for information management, research and content development.</p>
+<h2>Planned updates</h2>
+<h3>Quality review and update</h3>
+<p>Now that I have collected enough articles and sources, I&rsquo;ll work with AI to assess the quality of both. Some of the early collection was incomplete, though the articles themselves are relevant, so rebuilding the content around each article is key to keeping it searchable and relevant.</p>
+<h3>Personalization</h3>
+<p>I want to tell Insight what I&rsquo;m currently working on and focused on, so my daily briefing is as relevant as possible.</p>
+<h3>Diverse storage</h3>
+<p>A home for white papers, frameworks, standards and other knowledge beyond articles that I want considered in my own writing. That includes documents I create myself and my own published articles, kept for reference in future work.</p>
+<h3>Writing center</h3>
+<p>Grounding with RAG in my voice and writing style, so suggested drafts start closer to how I write. I also plan more control over article creation: length, variability, topics, number of sources, number and placement of quotes, citations in a couple of useful formats, and multiple versions when needed.</p>""",
+    },
+    {
+        "slug": "ai-register",
+        "thumb": "thumb-agent-register",
+        "blurb": "AI agent governance workspace",
+        "name": "Agent Register",
+        "tags": ["Personal build", "AI governance", "Workspace"],
+        "summary": "An AI governance prototype that helps teams describe their agents, establish ownership and give reviewers a clearer picture of how AI is being used across an organization.",
+        "lede": "An AI governance prototype that helps teams describe their agents, establish ownership and give reviewers a clearer picture of how AI is being used across an organization.",
+        "links": "Personal project under active development. A populated demonstration and walkthrough are available upon request. Feedback from governance professionals, business owners and technical teams is welcome.",
+        "lead_img": ("ai-register-overview", "Agent Register governance view: agents organized by department with review status counts", "Organizational oversight: explore agent ownership by department and team, then drill into individual agents and their review status."),
+        "body": """<h2>What it is</h2>
+<p>Agent Register brings business context and technical implementation into a shared governance workflow. Submitters begin with a simple user story: who will use the agent, what it will help them accomplish and why that outcome matters.</p>
+<p>The intake then explores the platform, data sources, actions and human oversight involved. Questions adapt to how the agent is being built, allowing business teams to explain its purpose and technical owners to document its implementation.</p>
+<p>The governance view organizes agents by department and business owner, with drill-downs into teams, submission statuses and individual records. Reviewers can identify missing information, request changes and record decisions. Indicators such as external data sharing, write access and human approval requirements help focus attention without assigning an automatic risk rating.</p>
+<figure class="shot"><img src="/assets/lab/ai-register-drilldown.jpg" alt="Agent Register Finance drill-down showing subgroups, agents and submission statuses" loading="lazy"><figcaption>Drill-down: a department&rsquo;s subgroups, agents and submission statuses.</figcaption></figure>
+<figure class="shot"><img src="/assets/lab/ai-register-review.jpg" alt="Agent Register review screen with platform and ownership details, review indicators and approval controls" loading="lazy"><figcaption>Informed review: examine data access, permitted actions and human approval requirements alongside technical details and governance decisions.</figcaption></figure>
+<h2>Why I built it</h2>
+<p>I built Agent Register to explore how governance can become part of the way teams create and deploy AI.</p>
+<p>A useful review starts with a shared understanding of purpose, ownership, data and authority. Business users should be able to explain what they need in familiar language. Technical teams should be able to supply implementation details without asking the business owner to guess.</p>
+<p>This project turns that idea into a working prototype. It gives me a practical way to test intake questions, review workflows and organizational views, and to explore how governance can provide useful guidance as AI adoption grows.</p>
+<h2>How it was built</h2>
+<p>I developed the prototype iteratively with AI-assisted coding. I defined the governance questions, ownership structure and review workflow, then used AI to help implement the interface, conditional forms and supporting logic. Each iteration added a specific capability, from user-story intake to technical review and departmental drill-downs.</p>
+<p>The application uses HTML, CSS and JavaScript and is hosted as a private site. Records currently persist in the user&rsquo;s browser. The demonstration workspace contains 16 fictional agents across four departments, stored separately from other workspace records.</p>
+<p>It is a working prototype for testing and feedback. Shared storage, authenticated roles and a production audit trail remain future work.</p>""",
+    },
+    {
+        "slug": "personal-kanban",
+        "thumb": "thumb-kanban",
+        "blurb": "Personal planning tool",
+        "name": "Personal Kanban Board",
+        "tags": ["Personal build", "Productivity"],
+        "summary": "A personal planning tool I designed and built with AI to connect everyday tasks to what\u2019s important.",
+        "lede": "A personal planning tool I designed and built with AI to connect everyday tasks to what\u2019s important.",
+        "links": "Personal project. Demonstration and additional details available upon request.",
+        "lead_img": ("kanban-today", "Personal Kanban Board Today view showing a focused selection of five tasks from all three areas", "Today: a focused selection of tasks drawn from all three areas, retaining their categories and workflow status.", 785),
+        "body": """<h2>What it is</h2>
+<p>The board brings Personal, Professional and Home tasks into one view, with work moving through Backlog, Ready, In progress and Done. A separate Today view lets me choose a manageable set of tasks from any area without losing their place on the full board.</p>
+<p>Each area has an editable values statement. Tasks can include notes, a definition of done and one small next step. A &ldquo;Needs clarity&rdquo; flag marks work that needs more thought or exploration before I know how to approach it. The board is available on my Mac and iPad, with tasks saved online.</p>
+<figure class="shot" style="width:785px;max-width:calc(100vw - 48px)"><img src="/assets/lab/kanban-board.jpg" alt="Personal Kanban Board full board view: Personal, Professional and Home rows with Backlog, Ready, In progress and Done columns" loading="lazy"><figcaption>Full board: twelve cells organize Personal, Professional and Home tasks by status. Values statements connect each area to a broader intention, while &ldquo;Needs clarity&rdquo; flags identify tasks that need exploration.</figcaption></figure>
+<p class="note">Both screenshots use fictitious demonstration tasks and the quote &ldquo;As I think, so I feel. As I feel, so I do. As I do, so I become.&rdquo;</p>
+<h2>Why I built it</h2>
+<p>I wanted a way to plan my day that recognized the relationship between my own needs, my work and my home. Personal comes first deliberately: taking care of myself helps me show up in the other areas of my life.</p>
+<p>I also wanted to make unfamiliar work easier to approach. Naming what I don&rsquo;t yet understand, describing what done looks like and finding one small next step give me a practical way to move forward. The values statements and rotating quotes keep those daily choices connected to longer-term intentions.</p>
+<h2>How it was built</h2>
+<p>I directed the design and development through an iterative collaboration with ChatGPT and Codex. I defined the workflow, priorities, interactions and visual direction, and AI drafted and revised the implementation. Using the board between iterations helped me decide what to improve next.</p>
+<p>The application uses React and TypeScript, with a Cloudflare Worker and D1 database for persistent storage, hosted through ChatGPT Sites. It includes responsive layouts, Calm and Energy themes, editable values and a personal quote collection. The current Calm palette draws from a watercolor my sister painted, with a frog and reed adapted into a floating illustration.</p>""",
+    },
+]
+
+lab_mini = "".join(
+    f"""<a class="lab-mini" href="/lab/{e['slug']}/">
+<div class="card-thumb"><img src="/assets/lab/{e['thumb']}.jpg" alt="" loading="lazy"></div>
+<h3>{e['name']}</h3>
+<p class="muted">{e['blurb']}</p>
+</a>"""
+    for e in LAB
+)
+
 # ---------------------------------------------------------------- home
 home = f"""<section class="hero"><div class="wrap">
 <p class="eyebrow">AI enablement &middot; process &middot; governance &middot; delivery</p>
@@ -409,6 +508,13 @@ home = f"""<section class="hero"><div class="wrap">
 <h2>Proof from regulated, high-stakes environments</h2>
 <div class="grid two" style="margin-top:28px">{"".join(work_card(c) for c in HOME_CASES)}</div>
 <p style="margin-top:24px"><a href="/work/">All case studies &rarr;</a></p>
+</div></section>
+
+<section><div class="wrap">
+<div class="lab-strip">
+<div class="lab-strip-head"><div><p class="eyebrow">From the Lab</p><h2>Apps I&rsquo;ve built with AI</h2></div><a href="/lab/">Explore the Lab &rarr;</a></div>
+<div class="grid three">{lab_mini}</div>
+</div>
 </div></section>
 
 <section class="band"><div class="wrap">
@@ -523,89 +629,6 @@ page("/contact/", "Contact | John Molendyk", "Book a discovery call or send a me
 
 
 # ---------------------------------------------------------------- lab
-LAB = [
-    {
-        "slug": "insights",
-        "name": "Insight",
-        "tags": ["Personal build", "AI governance", "Articles", "Knowledge center"],
-        "summary": "An AI-powered research platform that collects, organizes and synthesizes news and articles about AI governance, helping turn a rapidly changing information landscape into actionable insights.",
-        "what": "[Placeholder] Describe the app: a collection of AI governance articles presented under the Insights name. What can a visitor do with it?",
-        "why": "[Placeholder] Why you built it and the gap it fills.",
-        "how": "[Placeholder] How it was built: tools, the role AI played, what you decided versus what the AI drafted.",
-        "links": "Personal project. Demonstration and additional details available upon request.",
-        "lede": "An AI-powered news and research platform designed to make it easier to follow developments in AI governance, understand emerging trends and turn information into informed perspectives.",
-        "stat": "2,500+ articles from 200+ active sources",
-        "lead_img": ("insight-briefing", "Insight Daily Briefing: top stories, collection routes and source counts", "Daily Briefing"),
-        "body": """<h2>What it is</h2>
-<p>Insight collects articles and organizes them into common-sense themes. It highlights specific sources and brings forward the articles most relevant to what I&rsquo;m working on now.</p>
-<p>A daily briefing gives me a quick snapshot, where I can expand the categories I care about and collapse the rest.</p>
-<p>I can search the full library of collected articles and, from within any article, start developing ideas for my own writing while the tool surfaces other articles and sources worth considering.</p>
-<p>I can also manage my sources and create new categories for the article taxonomy.</p>
-<figure class="shot"><img src="/assets/lab/insight-library.jpg" alt="Insight Library: collected articles organized by governance category, with search and filters" loading="lazy"><figcaption>Library: every collected article, organized by governance category.</figcaption></figure>
-<figure class="shot"><img src="/assets/lab/insight-writing.jpg" alt="Insight Writing ideas: start from a perspective to test and build a research brief" loading="lazy"><figcaption>Writing ideas: start with a perspective to test and build a research brief from the evidence.</figcaption></figure>
-<h2>Why I built it</h2>
-<p>Staying current in a field as fast-moving as AI governance is nearly impossible, and the pace keeps increasing. New threats, technologies, solutions, regulations, standards and practices emerge constantly across multiple disciplines.</p>
-<p>I built Insight to keep me focused on information from core sources on a regular basis, while exposing me to new sources without inundating me.</p>
-<p>It goes beyond a list of bookmarks or a spreadsheet. AI parses newsletters and traverses my sources for me, so I get a consolidated perspective quickly and know there is one place where the material I care about most lives.</p>
-<p>I can add individual articles or sources, or drop in a newsletter and have the articles and new sources collected. I can also see how each source performs and decide whether it is meeting my needs or should be removed.</p>
-<h2>Approach</h2>
-<p>Insight was developed through an iterative, AI-assisted process. I defined the product requirements, information architecture, taxonomy, collection workflow and editorial experience, and used AI coding tools to help implement and refine the application.</p>
-<p>The design emphasizes source quality, relevance and traceability. Rather than treating AI-generated summaries as authoritative, the platform supports research and judgment while preserving access to the original sources.</p>
-<p>The project continues to evolve as I explore more effective ways to use AI for information management, research and content development.</p>
-<h2>Planned updates</h2>
-<h3>Quality review and update</h3>
-<p>Now that I have collected enough articles and sources, I&rsquo;ll work with AI to assess the quality of both. Some of the early collection was incomplete, though the articles themselves are relevant, so rebuilding the content around each article is key to keeping it searchable and relevant.</p>
-<h3>Personalization</h3>
-<p>I want to tell Insight what I&rsquo;m currently working on and focused on, so my daily briefing is as relevant as possible.</p>
-<h3>Diverse storage</h3>
-<p>A home for white papers, frameworks, standards and other knowledge beyond articles that I want considered in my own writing. That includes documents I create myself and my own published articles, kept for reference in future work.</p>
-<h3>Writing center</h3>
-<p>Grounding with RAG in my voice and writing style, so suggested drafts start closer to how I write. I also plan more control over article creation: length, variability, topics, number of sources, number and placement of quotes, citations in a couple of useful formats, and multiple versions when needed.</p>""",
-    },
-    {
-        "slug": "ai-register",
-        "name": "Agent Register",
-        "tags": ["Personal build", "AI governance", "Workspace"],
-        "summary": "An AI governance prototype that helps teams describe their agents, establish ownership and give reviewers a clearer picture of how AI is being used across an organization.",
-        "lede": "An AI governance prototype that helps teams describe their agents, establish ownership and give reviewers a clearer picture of how AI is being used across an organization.",
-        "links": "Personal project under active development. A populated demonstration and walkthrough are available upon request. Feedback from governance professionals, business owners and technical teams is welcome.",
-        "lead_img": ("ai-register-overview", "Agent Register governance view: agents organized by department with review status counts", "Organizational oversight: explore agent ownership by department and team, then drill into individual agents and their review status."),
-        "body": """<h2>What it is</h2>
-<p>Agent Register brings business context and technical implementation into a shared governance workflow. Submitters begin with a simple user story: who will use the agent, what it will help them accomplish and why that outcome matters.</p>
-<p>The intake then explores the platform, data sources, actions and human oversight involved. Questions adapt to how the agent is being built, allowing business teams to explain its purpose and technical owners to document its implementation.</p>
-<p>The governance view organizes agents by department and business owner, with drill-downs into teams, submission statuses and individual records. Reviewers can identify missing information, request changes and record decisions. Indicators such as external data sharing, write access and human approval requirements help focus attention without assigning an automatic risk rating.</p>
-<figure class="shot"><img src="/assets/lab/ai-register-drilldown.jpg" alt="Agent Register Finance drill-down showing subgroups, agents and submission statuses" loading="lazy"><figcaption>Drill-down: a department&rsquo;s subgroups, agents and submission statuses.</figcaption></figure>
-<figure class="shot"><img src="/assets/lab/ai-register-review.jpg" alt="Agent Register review screen with platform and ownership details, review indicators and approval controls" loading="lazy"><figcaption>Informed review: examine data access, permitted actions and human approval requirements alongside technical details and governance decisions.</figcaption></figure>
-<h2>Why I built it</h2>
-<p>I built Agent Register to explore how governance can become part of the way teams create and deploy AI.</p>
-<p>A useful review starts with a shared understanding of purpose, ownership, data and authority. Business users should be able to explain what they need in familiar language. Technical teams should be able to supply implementation details without asking the business owner to guess.</p>
-<p>This project turns that idea into a working prototype. It gives me a practical way to test intake questions, review workflows and organizational views, and to explore how governance can provide useful guidance as AI adoption grows.</p>
-<h2>How it was built</h2>
-<p>I developed the prototype iteratively with AI-assisted coding. I defined the governance questions, ownership structure and review workflow, then used AI to help implement the interface, conditional forms and supporting logic. Each iteration added a specific capability, from user-story intake to technical review and departmental drill-downs.</p>
-<p>The application uses HTML, CSS and JavaScript and is hosted as a private site. Records currently persist in the user&rsquo;s browser. The demonstration workspace contains 16 fictional agents across four departments, stored separately from other workspace records.</p>
-<p>It is a working prototype for testing and feedback. Shared storage, authenticated roles and a production audit trail remain future work.</p>""",
-    },
-    {
-        "slug": "personal-kanban",
-        "name": "Personal Kanban Board",
-        "tags": ["Personal build", "Productivity"],
-        "summary": "A personal planning tool I designed and built with AI to connect everyday tasks to what\u2019s important.",
-        "lede": "A personal planning tool I designed and built with AI to connect everyday tasks to what\u2019s important.",
-        "links": "Personal project. Demonstration and additional details available upon request.",
-        "lead_img": ("kanban-today", "Personal Kanban Board Today view showing a focused selection of five tasks from all three areas", "Today: a focused selection of tasks drawn from all three areas, retaining their categories and workflow status.", 785),
-        "body": """<h2>What it is</h2>
-<p>The board brings Personal, Professional and Home tasks into one view, with work moving through Backlog, Ready, In progress and Done. A separate Today view lets me choose a manageable set of tasks from any area without losing their place on the full board.</p>
-<p>Each area has an editable values statement. Tasks can include notes, a definition of done and one small next step. A &ldquo;Needs clarity&rdquo; flag marks work that needs more thought or exploration before I know how to approach it. The board is available on my Mac and iPad, with tasks saved online.</p>
-<figure class="shot" style="width:785px;max-width:calc(100vw - 48px)"><img src="/assets/lab/kanban-board.jpg" alt="Personal Kanban Board full board view: Personal, Professional and Home rows with Backlog, Ready, In progress and Done columns" loading="lazy"><figcaption>Full board: twelve cells organize Personal, Professional and Home tasks by status. Values statements connect each area to a broader intention, while &ldquo;Needs clarity&rdquo; flags identify tasks that need exploration.</figcaption></figure>
-<p class="note">Both screenshots use fictitious demonstration tasks and the quote &ldquo;As I think, so I feel. As I feel, so I do. As I do, so I become.&rdquo;</p>
-<h2>Why I built it</h2>
-<p>I wanted a way to plan my day that recognized the relationship between my own needs, my work and my home. Personal comes first deliberately: taking care of myself helps me show up in the other areas of my life.</p>
-<p>I also wanted to make unfamiliar work easier to approach. Naming what I don&rsquo;t yet understand, describing what done looks like and finding one small next step give me a practical way to move forward. The values statements and rotating quotes keep those daily choices connected to longer-term intentions.</p>
-<h2>How it was built</h2>
-<p>I directed the design and development through an iterative collaboration with ChatGPT and Codex. I defined the workflow, priorities, interactions and visual direction, and AI drafted and revised the implementation. Using the board between iterations helped me decide what to improve next.</p>
-<p>The application uses React and TypeScript, with a Cloudflare Worker and D1 database for persistent storage, hosted through ChatGPT Sites. It includes responsive layouts, Calm and Energy themes, editable values and a personal quote collection. The current Calm palette draws from a watercolor my sister painted, with a frog and reed adapted into a floating illustration.</p>""",
-    },
-]
 
 
 def lab_tags(tags):
@@ -614,6 +637,7 @@ def lab_tags(tags):
 
 lab_cards = "".join(
     f"""<a class="card work-card" href="/lab/{e['slug']}/">
+<div class="card-thumb"><img src="/assets/lab/{e['thumb']}.jpg" alt="" loading="lazy"></div>
 <h3>{e['name']}</h3>
 <p class="muted">{e['summary']}</p>
 {lab_tags(e['tags'])}
