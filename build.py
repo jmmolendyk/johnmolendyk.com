@@ -179,7 +179,7 @@ CASES = [
     {
         "slug": "wealth-migration-continuity",
         "logo": ("wells-fargo", "Wells Fargo"),
-        "short": "Migration weekends with zero losses",
+        "short": "Offline account balances",
         "title": "Maintaining wealth-management account balances offline through three migration weekends",
         "client": "Wells Fargo / Wachovia, wealth management",
         "years": "2010–2011",
@@ -289,7 +289,7 @@ def tags_html(tags):
 
 CARD_CTX = {
     "ai-voice-privacy-research": "AI and voice features",
-    "wealth-migration-continuity": "Wealth management",
+    "wealth-migration-continuity": "Wealth management, fraud, risk and compliance",
     "healthcare-feedback-platform": "Healthcare services",
     "mortgage-document-governance": "Mortgage banking",
 }
