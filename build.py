@@ -595,6 +595,11 @@ LAB = [
         "body": """<h2>What it is</h2>
 <p>The board brings Personal, Professional and Home tasks into one view, with work moving through Backlog, Ready, In progress and Done. A separate Today view lets me choose a manageable set of tasks from any area without losing their place on the full board.</p>
 <p>Each area has an editable values statement. Tasks can include notes, a definition of done and one small next step. A &ldquo;Needs clarity&rdquo; flag marks work that needs more thought or exploration before I know how to approach it. The board is available on my Mac and iPad, with tasks saved online.</p>
+<div class="shot-pair">
+<figure class="shot" style="max-width:675px"><img src="/assets/lab/kanban-board.jpg" alt="Personal Kanban Board full board view: Personal, Professional and Home rows with Backlog, Ready, In progress and Done columns" loading="lazy"><figcaption>Full board: twelve cells organize Personal, Professional and Home tasks by status. Values statements connect each area to a broader intention, while &ldquo;Needs clarity&rdquo; flags identify tasks that need exploration.</figcaption></figure>
+<figure class="shot" style="max-width:785px"><img src="/assets/lab/kanban-today.jpg" alt="Personal Kanban Board Today view showing a focused selection of five tasks from all three areas" loading="lazy"><figcaption>Today: a focused selection of tasks drawn from all three areas, retaining their categories and workflow status.</figcaption></figure>
+</div>
+<p class="note">Both screenshots use fictitious demonstration tasks and the quote &ldquo;As I think, so I feel. As I feel, so I do. As I do, so I become.&rdquo;</p>
 <h2>Why I built it</h2>
 <p>I wanted a way to plan my day that recognized the relationship between my own needs, my work and my home. Personal comes first deliberately: taking care of myself helps me show up in the other areas of my life.</p>
 <p>I also wanted to make unfamiliar work easier to approach. Naming what I don&rsquo;t yet understand, describing what done looks like and finding one small next step give me a practical way to move forward. The values statements and rotating quotes keep those daily choices connected to longer-term intentions.</p>
