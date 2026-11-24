@@ -494,8 +494,9 @@ about = f"""<section class="hero" style="padding-bottom:24px"><div class="wrap">
 </ul>
 
 <h2>Technical fluency</h2>
-<p>I can read and understand code, query data and work with APIs, so I can talk with engineering teams on their terms and see where controls belong. I use that to ask sharper questions and write controls engineers can implement, not to build your systems.</p>
-<p class="note">Familiar with Python, SQL, JavaScript, HTML/CSS and APIs, plus research and design methods, data analysis and vendor management.</p>
+<p>My technical background spans software development, data analysis, systems integration and product delivery, built through close collaboration with engineering, data science, design and other stakeholders.</p>
+<p>Today I bring that experience to an AI-assisted development practice, using tools such as Codex and Claude Code to accelerate development, test ideas and improve solutions iteratively.</p>
+<p>I have worked with Python, SQL, JavaScript and HTML/CSS, and with automation and low-code tools including n8n, Zapier and Microsoft Power Platform.</p>
 
 <div class="actions"><a class="btn" href="{CALENDLY}">Book a discovery call</a><a class="btn ghost" href="{LINKEDIN}">LinkedIn</a></div>
 </div></div></section>"""
