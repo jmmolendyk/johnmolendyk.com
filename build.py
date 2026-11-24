@@ -487,6 +487,7 @@ about = f"""<section class="hero" style="padding-bottom:24px"><div class="wrap">
 <li><strong>Plaza Home Mortgage</strong>, Program Manager / LOS Product Owner (2012&ndash;2015)</li>
 <li><strong>B. Braun Medical</strong>, Senior Consultant, Safety Compliance (2011&ndash;2012)</li>
 <li><strong>Wells Fargo / Wachovia</strong>, Senior Consultant / Product Owner (2010&ndash;2011)</li>
+<li><strong>Independent consultant</strong>, small business management consulting (2008&ndash;2021)</li>
 <li>Earlier: New Century Mortgage, H&amp;R Block and Lender Processing Services</li>
 </ul>
 
