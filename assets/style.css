@@ -258,3 +258,5 @@ textarea { min-height: 150px; resize: vertical; }
 .shot.lead { margin: 8px 0 0; }
 .lab-stat { font-family: var(--mono); font-size: 14px; color: var(--blue); margin: 18px 0 0; }
 .prose h3 { font-size: 19px; margin: 1.4em 0 .3em; }
+/* let screenshots in lab pages use the full content width, not the 720px text column */
+.prose figure.shot { width: 1032px; max-width: calc(100vw - 48px); }

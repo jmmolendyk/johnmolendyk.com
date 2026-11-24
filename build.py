@@ -535,7 +535,7 @@ LAB = [
         "links": "Personal project. Demonstration and additional details available upon request.",
         "lede": "An AI-powered news and research platform designed to make it easier to follow developments in AI governance, understand emerging trends and turn information into informed perspectives.",
         "stat": "2,500+ articles from 200+ active sources",
-        "lead_img": ("insight-briefing", "Insight Daily Briefing: top stories, collection routes and source counts"),
+        "lead_img": ("insight-briefing", "Insight Daily Briefing: top stories, collection routes and source counts", "Daily Briefing"),
         "body": """<h2>What it is</h2>
 <p>Insight collects articles and organizes them into common-sense themes. It highlights specific sources and brings forward the articles most relevant to what I&rsquo;m working on now.</p>
 <p>A daily briefing gives me a quick snapshot, where I can expand the categories I care about and collapse the rest.</p>
@@ -566,11 +566,24 @@ LAB = [
         "slug": "ai-register",
         "name": "AI Register",
         "tags": ["Personal build", "AI governance", "Workspace"],
-        "summary": "An AI governance workspace for documenting systems, models, datasets and agents, while assessing risks, assigning accountability and supporting ongoing oversight throughout the AI lifecycle.",
-        "what": "[Placeholder] Describe the AI governance workspace: what it tracks and what a user can do in it.",
-        "why": "[Placeholder] Why you built it, and how it connects to the governance work you do for organizations.",
-        "how": "[Placeholder] How it was built: tools, the role AI played, what you decided versus what the AI drafted, and how it handles data.",
-        "links": "Personal project. Demonstration and additional details available upon request.",
+        "summary": "An AI governance prototype that helps teams describe their agents, establish ownership and give reviewers a clearer picture of how AI is being used across an organization.",
+        "lede": "An AI governance prototype that helps teams describe their agents, establish ownership and give reviewers a clearer picture of how AI is being used across an organization.",
+        "links": "Personal project under active development. A populated demonstration and walkthrough are available upon request. Feedback from governance professionals, business owners and technical teams is welcome.",
+        "lead_img": ("ai-register-overview", "AI Register governance view: agents organized by department with review status counts", "Organizational oversight: explore agent ownership by department and team, then drill into individual agents and their review status."),
+        "body": """<h2>What it is</h2>
+<p>AI Register brings business context and technical implementation into a shared governance workflow. Submitters begin with a simple user story: who will use the agent, what it will help them accomplish and why that outcome matters.</p>
+<p>The intake then explores the platform, data sources, actions and human oversight involved. Questions adapt to how the agent is being built, allowing business teams to explain its purpose and technical owners to document its implementation.</p>
+<p>The governance view organizes agents by department and business owner, with drill-downs into teams, submission statuses and individual records. Reviewers can identify missing information, request changes and record decisions. Indicators such as external data sharing, write access and human approval requirements help focus attention without assigning an automatic risk rating.</p>
+<figure class="shot"><img src="/assets/lab/ai-register-drilldown.jpg" alt="AI Register Finance drill-down showing subgroups, agents and submission statuses" loading="lazy"><figcaption>Drill-down: a department&rsquo;s subgroups, agents and submission statuses.</figcaption></figure>
+<figure class="shot"><img src="/assets/lab/ai-register-review.jpg" alt="AI Register review screen with platform and ownership details, review indicators and approval controls" loading="lazy"><figcaption>Informed review: examine data access, permitted actions and human approval requirements alongside technical details and governance decisions.</figcaption></figure>
+<h2>Why I built it</h2>
+<p>I built AI Register to explore how governance can become part of the way teams create and deploy AI.</p>
+<p>A useful review starts with a shared understanding of purpose, ownership, data and authority. Business users should be able to explain what they need in familiar language. Technical teams should be able to supply implementation details without asking the business owner to guess.</p>
+<p>This project turns that idea into a working prototype. It gives me a practical way to test intake questions, review workflows and organizational views, and to explore how governance can provide useful guidance as AI adoption grows.</p>
+<h2>How it was built</h2>
+<p>I developed the prototype iteratively with AI-assisted coding. I defined the governance questions, ownership structure and review workflow, then used AI to help implement the interface, conditional forms and supporting logic. Each iteration added a specific capability, from user-story intake to technical review and departmental drill-downs.</p>
+<p>The application uses HTML, CSS and JavaScript and is hosted as a private site. Records currently persist in the user&rsquo;s browser. The demonstration workspace contains 16 fictional agents across four departments, stored separately from other workspace records.</p>
+<p>It is a working prototype for testing and feedback. Shared storage, authenticated roles and a production audit trail remain future work.</p>""",
     },
     {
         "slug": "personal-kanban",
@@ -610,16 +623,17 @@ page("/lab/", "Lab | John Molendyk", "Apps built with AI and governed by design:
 
 for e in LAB:
     if e.get("body"):
+        lab_stat = '<p class="lab-stat">%s</p>' % e["stat"] if e.get("stat") else ""
         page("/lab/%s/" % e["slug"], "%s | Lab | John Molendyk" % e["name"], e["lede"],
              f"""<section class="case-head"><div class="wrap">
 <p class="eyebrow">Lab</p>
 <h1>{e['name']}</h1>
 <p class="lede">{e['lede']}</p>
 {lab_tags(e['tags'])}
-<p class="lab-stat">{e['stat']}</p>
+{lab_stat}
 </div></section>
 <section style="padding-top:8px"><div class="wrap">
-<figure class="shot lead"><img src="/assets/lab/{e['lead_img'][0]}.jpg" alt="{e['lead_img'][1]}"><figcaption>Daily Briefing</figcaption></figure>
+<figure class="shot lead"><img src="/assets/lab/{e['lead_img'][0]}.jpg" alt="{e['lead_img'][1]}"><figcaption>{e['lead_img'][2]}</figcaption></figure>
 </div></section>
 <section style="padding-top:24px"><div class="wrap"><div class="prose">
 {e['body']}
