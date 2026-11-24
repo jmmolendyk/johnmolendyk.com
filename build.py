@@ -349,7 +349,7 @@ for c in CASES:
 # ---------------------------------------------------------------- home
 home = f"""<section class="hero"><div class="wrap">
 <p class="eyebrow">AI enablement &middot; process &middot; governance &middot; delivery</p>
-<h1>I help teams make AI work, with responsibility built in from the start.</h1>
+<h1>I help teams make AI work, responsibly from day one.</h1>
 <p class="lede">Twenty years of delivering technology and process within financial services, healthcare and big tech. I help organizations adopt AI in a sustainable and responsible way.</p>
 <div class="actions"><a class="btn" href="{CALENDLY}">Book a discovery call</a><a class="btn ghost" href="/work/">See the work</a></div>
 </div></section>
