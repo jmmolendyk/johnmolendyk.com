@@ -153,13 +153,13 @@ CASES = [
         "years": "2017–2018",
         "role": "Senior Consultant, Document Governance",
         "tags": [("Governance", ""), ("Process", ""), ("Human-Centered", "d")],
-        "card_stat": "5,000+ → ~500",
-        "card_stat_note": "records rationalized into controlled documents",
+        "card_stat": "<5 months",
+        "card_stat_note": "delivered against an 18-month IT estimate",
         "summary": "Alongside a loan origination system (LOS) document compliance API implementation, I led the work to identify a controlled library of mortgage documentation. I implemented an IT-approved no-code solution with role-based access and basic mortgage scenarios to support audit functions. The application supported version control and let Operations view documents within their scope.",
         "stats": [
+            ("<5 months", "against an 18-month IT estimate"),
             ("5,000+", "records audited and rationalized"),
             ("100%", "of in-scope documents validated and versioned"),
-            ("<5 months", "against an 18-month IT estimate"),
         ],
         "sections": [
             ("The situation",
@@ -592,13 +592,11 @@ LAB = [
         "summary": "A personal planning tool I designed and built with AI to connect everyday tasks to what\u2019s important.",
         "lede": "A personal planning tool I designed and built with AI to connect everyday tasks to what\u2019s important.",
         "links": "Personal project. Demonstration and additional details available upon request.",
+        "lead_img": ("kanban-today", "Personal Kanban Board Today view showing a focused selection of five tasks from all three areas", "Today: a focused selection of tasks drawn from all three areas, retaining their categories and workflow status.", 785),
         "body": """<h2>What it is</h2>
 <p>The board brings Personal, Professional and Home tasks into one view, with work moving through Backlog, Ready, In progress and Done. A separate Today view lets me choose a manageable set of tasks from any area without losing their place on the full board.</p>
 <p>Each area has an editable values statement. Tasks can include notes, a definition of done and one small next step. A &ldquo;Needs clarity&rdquo; flag marks work that needs more thought or exploration before I know how to approach it. The board is available on my Mac and iPad, with tasks saved online.</p>
-<div class="shot-pair">
-<figure class="shot" style="max-width:675px"><img src="/assets/lab/kanban-board.jpg" alt="Personal Kanban Board full board view: Personal, Professional and Home rows with Backlog, Ready, In progress and Done columns" loading="lazy"><figcaption>Full board: twelve cells organize Personal, Professional and Home tasks by status. Values statements connect each area to a broader intention, while &ldquo;Needs clarity&rdquo; flags identify tasks that need exploration.</figcaption></figure>
-<figure class="shot" style="max-width:785px"><img src="/assets/lab/kanban-today.jpg" alt="Personal Kanban Board Today view showing a focused selection of five tasks from all three areas" loading="lazy"><figcaption>Today: a focused selection of tasks drawn from all three areas, retaining their categories and workflow status.</figcaption></figure>
-</div>
+<figure class="shot" style="width:785px;max-width:calc(100vw - 48px)"><img src="/assets/lab/kanban-board.jpg" alt="Personal Kanban Board full board view: Personal, Professional and Home rows with Backlog, Ready, In progress and Done columns" loading="lazy"><figcaption>Full board: twelve cells organize Personal, Professional and Home tasks by status. Values statements connect each area to a broader intention, while &ldquo;Needs clarity&rdquo; flags identify tasks that need exploration.</figcaption></figure>
 <p class="note">Both screenshots use fictitious demonstration tasks and the quote &ldquo;As I think, so I feel. As I feel, so I do. As I do, so I become.&rdquo;</p>
 <h2>Why I built it</h2>
 <p>I wanted a way to plan my day that recognized the relationship between my own needs, my work and my home. Personal comes first deliberately: taking care of myself helps me show up in the other areas of my life.</p>
@@ -637,7 +635,7 @@ for e in LAB:
     if e.get("body"):
         lab_stat = '<p class="lab-stat">%s</p>' % e["stat"] if e.get("stat") else ""
         li = e.get("lead_img")
-        lead_html = ('<section style="padding-top:8px"><div class="wrap">\n<figure class="shot lead"><img src="/assets/lab/%s.jpg" alt="%s"><figcaption>%s</figcaption></figure>\n</div></section>' % li) if li else ""
+        lead_html = ('<section style="padding-top:8px"><div class="wrap">\n<figure class="shot lead" style="%s"><img src="/assets/lab/%s.jpg" alt="%s"><figcaption>%s</figcaption></figure>\n</div></section>' % (("max-width:%dpx" % li[3]) if len(li) > 3 else "", li[0], li[1], li[2])) if li else ""
         page("/lab/%s/" % e["slug"], "%s | Lab | John Molendyk" % e["name"], e["lede"],
              f"""<section class="case-head"><div class="wrap">
 <p class="eyebrow">Lab</p>
