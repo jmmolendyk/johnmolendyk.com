@@ -354,8 +354,21 @@ LAB = [
         "summary": "An email router that uses sentiment analysis and classification to send each message to the appropriate owner and gauge its importance, urgency and topic. Keywords can be set to allow active filtering, so content is managed naturally.",
         "lede": "An email router that uses sentiment analysis and classification to send each message to the appropriate owner and gauge its importance, urgency and topic. Keywords can be set to allow active filtering, so content is managed naturally.",
         "links": "Personal project. Demonstration and additional details available upon request.",
+        "lead_svg": ("email-automation-flow", "Email flow: Gmail to Zapier to the OpenAI API, then out to Gmail labels, HubSpot and Google Sheets", "Connected tools: Gmail, Zapier, the OpenAI API, HubSpot and Google Sheets."),
+        "thumb": "thumb-email",
         "body": """<h2>What it is</h2>
-<p>Full details are coming soon.</p>""",
+<p>An email router that classifies each incoming message for sentiment, importance, urgency and topic, then sorts it so the right things surface at the right time. Zapier connects Gmail to the OpenAI API for analysis. Keywords update Gmail so messages are labeled and filtered, and the results are pushed to HubSpot and Google Sheets.</p>
+<h2>Who it&rsquo;s for</h2>
+<p>A small business owner who takes part in the design and building of high-end motorcycles and travels to two destinations for weeks or a month at a time. They needed to be alerted to anything urgent and to stay focused on items scheduled for other times.</p>
+<h2>How it works</h2>
+<ol>
+<li><strong>Email arrives.</strong> Zapier picks up each new message in Gmail.</li>
+<li><strong>It&rsquo;s analyzed.</strong> The OpenAI API classifies sentiment, importance, urgency and topic.</li>
+<li><strong>It&rsquo;s routed.</strong> Keywords update Gmail so messages are labeled and filtered, and urgent items stand out.</li>
+<li><strong>It&rsquo;s recorded.</strong> Data is pushed to HubSpot and Google Sheets.</li>
+</ol>
+<h2>Result</h2>
+<p>Email intake is low volume, at 50 to 100 messages a month, but the system lets my client focus on what they do best without worrying that something is being missed.</p>""",
     },
     {
         "slug": "insights",
@@ -678,7 +691,10 @@ for e in LAB:
     if e.get("body"):
         lab_stat = '<p class="lab-stat">%s</p>' % e["stat"] if e.get("stat") else ""
         li = e.get("lead_img")
+        ls = e.get("lead_svg")
         lead_html = ('<section style="padding-top:8px"><div class="wrap">\n<figure class="shot lead" style="%s"><img src="/assets/lab/%s.jpg" alt="%s"><figcaption>%s</figcaption></figure>\n</div></section>' % (("max-width:%dpx" % li[3]) if len(li) > 3 else "", li[0], li[1], li[2])) if li else ""
+        if ls:
+            lead_html = '<section style="padding-top:8px"><div class="wrap">\n<figure class="shot lead"><img src="/assets/lab/%s.svg" alt="%s"><figcaption>%s</figcaption></figure>\n</div></section>' % ls
         page("/lab/%s/" % e["slug"], "%s | Lab | John Molendyk" % e["name"], e["lede"],
              f"""<section class="case-head"><div class="wrap">
 <p class="eyebrow">Lab</p>
