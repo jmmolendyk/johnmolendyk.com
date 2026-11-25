@@ -359,7 +359,7 @@ LAB = [
         "body": """<h2>What it is</h2>
 <p>An email router that classifies each incoming message for sentiment, importance, urgency and topic, then sorts it so the right things surface at the right time. Zapier connects Gmail to the OpenAI API for analysis. Keywords update Gmail so messages are labeled and filtered, and the results are pushed to HubSpot and Google Sheets.</p>
 <h2>Who it&rsquo;s for</h2>
-<p>A small business owner who helps design and build high-end motorcycles and travels to multiple destinations throughout the year, staying for weeks and up to a month at a time. While on site, they need to stay focused on the work in front of them without missing important communication. They needed urgent items to reach them right away, and everything else to wait until its time.</p>
+<p>A small business owner who helps design and build high-end motorcycles and travels to multiple destinations throughout the year, staying for weeks and up to a month at a time. While on site, they need to stay focused on the work in front of them, with urgent items reaching them right away and everything else waiting until its time.</p>
 <h2>How it works</h2>
 <ol>
 <li><strong>Email arrives.</strong> Zapier picks up each new message in Gmail.</li>
