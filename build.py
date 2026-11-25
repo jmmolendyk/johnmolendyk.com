@@ -350,10 +350,10 @@ LAB = [
         "fullname": "Email Automation Router and Analysis",
         "tile": "flow",
         "blurb": "Email routing and analysis",
-        "tags": ["Personal build", "Automation", "Email"],
+        "tags": ["Client project", "Automation", "Email"],
         "summary": "An email router that uses sentiment analysis and classification to send each message to the appropriate owner and gauge its importance, urgency and topic. Keywords can be set to allow active filtering, so content is managed naturally.",
         "lede": "An email router that uses sentiment analysis and classification to send each message to the appropriate owner and gauge its importance, urgency and topic. Keywords can be set to allow active filtering, so content is managed naturally.",
-        "links": "Personal project. Demonstration and additional details available upon request.",
+        "links": "Client project. Additional details available upon request.",
         "lead_svg": ("email-automation-flow", "Email flow: Gmail to Zapier to the OpenAI API, then out to Gmail labels, HubSpot and Google Sheets", "Connected tools: Gmail, Zapier, the OpenAI API, HubSpot and Google Sheets."),
         "thumb": "thumb-email",
         "body": """<h2>What it is</h2>
