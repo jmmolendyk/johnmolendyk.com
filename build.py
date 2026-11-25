@@ -618,7 +618,7 @@ about = f"""<section class="hero" style="padding-bottom:24px"><div class="wrap">
 
 <h2>Experience</h2>
 <ul>
-<li><strong>Flowhaus.ai</strong>, Principal Consultant, AI Governance &amp; Advisory (2023&ndash;present)</li>
+<li><strong>Flowhaus.ai</strong>, Principal Consultant, AI Enablement and Governance (2023&ndash;present)</li>
 <li><strong>Meta / Reality Labs</strong>, Senior UX Researcher, AI / Voice (2021&ndash;2023)</li>
 <li><strong>Union Bank</strong>, Senior Consultant, Document Governance (2017&ndash;2018)</li>
 <li><strong>Alliance Healthcare Services</strong>, Technical Product Owner (2015&ndash;2017)</li>
