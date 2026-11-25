@@ -345,6 +345,19 @@ for c in CASES:
 
 LAB = [
     {
+        "slug": "email-automation",
+        "name": "Email Automation",
+        "fullname": "Email Automation Router and Analysis",
+        "tile": "flow",
+        "blurb": "Email routing and analysis",
+        "tags": ["Personal build", "Automation", "Email"],
+        "summary": "An email router that uses sentiment analysis and classification to send each message to the appropriate owner and gauge its importance, urgency and topic. Keywords can be set to allow active filtering, so content is managed naturally.",
+        "lede": "An email router that uses sentiment analysis and classification to send each message to the appropriate owner and gauge its importance, urgency and topic. Keywords can be set to allow active filtering, so content is managed naturally.",
+        "links": "Personal project. Demonstration and additional details available upon request.",
+        "body": """<h2>What it is</h2>
+<p>Full details are coming soon.</p>""",
+    },
+    {
         "slug": "insights",
         "thumb": "thumb-insight",
         "blurb": "AI governance research platform",
@@ -433,9 +446,15 @@ LAB = [
     },
 ]
 
+def thumb_html(e):
+    if e.get("thumb"):
+        return '<div class="card-thumb"><img src="/assets/lab/%s.jpg" alt="" loading="lazy"></div>' % e["thumb"]
+    return '<div class="card-thumb tile">%s</div>' % icon(e["tile"])
+
+
 lab_mini = "".join(
     f"""<a class="lab-mini" href="/lab/{e['slug']}/">
-<div class="card-thumb"><img src="/assets/lab/{e['thumb']}.jpg" alt="" loading="lazy"></div>
+{thumb_html(e)}
 <h3>{e['name']}</h3>
 <p class="muted">{e['blurb']}</p>
 </a>"""
@@ -513,7 +532,7 @@ home = f"""<section class="hero"><div class="wrap">
 <section class="band"><div class="wrap">
 <div class="lab-strip">
 <div class="lab-strip-head"><div><p class="eyebrow">From the Lab</p><h2>Apps I&rsquo;ve built with AI</h2></div><a href="/lab/">Explore the Lab &rarr;</a></div>
-<div class="grid three">{lab_mini}</div>
+<div class="grid four lab-grid">{lab_mini}</div>
 </div>
 </div></section>
 
@@ -637,7 +656,7 @@ def lab_tags(tags):
 
 lab_cards = "".join(
     f"""<a class="card work-card" href="/lab/{e['slug']}/">
-<div class="card-thumb"><img src="/assets/lab/{e['thumb']}.jpg" alt="" loading="lazy"></div>
+{thumb_html(e)}
 <h3>{e['name']}</h3>
 <p class="muted">{e['summary']}</p>
 {lab_tags(e['tags'])}
@@ -663,7 +682,7 @@ for e in LAB:
         page("/lab/%s/" % e["slug"], "%s | Lab | John Molendyk" % e["name"], e["lede"],
              f"""<section class="case-head"><div class="wrap">
 <p class="eyebrow">Lab</p>
-<h1>{e['name']}</h1>
+<h1>{e.get('fullname', e['name'])}</h1>
 <p class="lede">{e['lede']}</p>
 {lab_tags(e['tags'])}
 {lab_stat}
