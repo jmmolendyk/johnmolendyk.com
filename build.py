@@ -582,7 +582,7 @@ approach = f"""<section class="hero" style="padding-bottom:24px"><div class="wra
 <ol class="steps">
 <li><div><h3>Define and measure</h3><p>Start by identifying the problem or opportunity. Understand what it is, what solving it means for the business, and how we&rsquo;ll measure success once it&rsquo;s in place.</p></div></li>
 <li><div><h3>Optimize, then automate</h3><p>Fix the process first, then build the solution around the new needs and the technology available, including AI. Responsibility is built in from the start.</p></div></li>
-<li><div><h3>Manage and improve</h3><p>Track the new process against the measures we set at the start, and make iterative changes to keep improving its performance.</p></div></li>
+<li><div><h3>Manage and improve</h3><p>Once it&rsquo;s live, we manage it against the measures set at the start, reviewing results and making small, iterative improvements.</p></div></li>
 <li><div><h3>Hand over ownership</h3><p>Transfer the solution to its owner with the tools needed to maintain ownership, including documentation, training and a clear view of how it&rsquo;s performing.</p></div></li>
 </ol>
 </div></section>
@@ -681,9 +681,13 @@ page("/lab/", "Lab | John Molendyk", "Apps built with AI and governed by design:
      f"""<section class="hero" style="padding-bottom:24px"><div class="wrap">
 <p class="eyebrow">Lab</p>
 <h1>Things I build and make</h1>
-<p class="lede">Apps I&rsquo;ve built with AI: support tools, governance tools and personal projects.</p>
+<p class="lede">Current projects built with modern AI tools: support tools, governance tools and personal projects.</p>
 </div></section>
 <section style="padding-top:24px"><div class="wrap"><div class="grid two">{lab_cards}</div>
+<div class="prose" style="margin-top:48px"><h2>Technical fluency</h2>
+<p>My technical background spans software development, data analysis, systems integration and product delivery, built through close collaboration with engineering, data science, design and other stakeholders.</p>
+<p>Today I bring that experience to an AI-assisted development practice, using tools such as Codex and Claude Code to accelerate development, test ideas and improve solutions iteratively.</p>
+<p>I have worked with Python, SQL, JavaScript and HTML/CSS, and with automation and low-code tools including n8n, Zapier and Microsoft Power Platform.</p></div>
 <p class="note" style="margin-top:28px">For organization-level engagements and resources, see <a href="{FLOWHAUS}" target="_blank" rel="noopener">Flowhaus.ai</a>.</p></div></section>""",
      "/lab/")
 
